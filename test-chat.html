@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Physician — Barnabas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1612;
+      --parchment: #f5f0e8;
+      --parchment-dark: #ede6d6;
+      --gold: #b8933f;
+      --gold-light: #d4aa5a;
+      --burgundy: #6b2737;
+      --muted: #8a7e6e;
+      --user-bg: #f0e8d8;
+      --barnabas-bg: #ffffff;
+      --border: #d4c9b0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--parchment);
+      color: var(--ink);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Subtle cross watermark */
+    body::before {
+      content: '✝';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40vw;
+      color: rgba(184, 147, 63, 0.04);
+      pointer-events: none;
+      z-index: 0;
+      line-height: 1;
+    }
+
+    header {
+      background: var(--ink);
+      color: var(--parchment);
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 2px solid var(--gold);
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .cross-icon {
+      font-size: 1.4rem;
+      color: var(--gold);
+    }
+
+    .header-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--parchment);
+    }
+
+    .header-text p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #5cb85c;
+      margin-left: auto;
+      box-shadow: 0 0 6px rgba(92, 184, 92, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    #chat-window {
+      flex: 1;
+      overflow-y: auto;
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+      scroll-behavior: smooth;
+    }
+
+    #chat-window::-webkit-scrollbar { width: 6px; }
+    #chat-window::-webkit-scrollbar-track { background: transparent; }
+    #chat-window::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .message {
+      display: flex;
+      gap: 12px;
+      max-width: 720px;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .message.assistant {
+      align-self: flex-start;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .message.assistant .avatar {
+      background: var(--ink);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .message.user .avatar {
+      background: var(--burgundy);
+      color: var(--parchment);
+    }
+
+    .bubble {
+      padding: 14px 18px;
+      border-radius: 2px;
+      line-height: 1.7;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .message.assistant .bubble {
+      background: var(--barnabas-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      color: var(--ink);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .message.user .bubble {
+      background: var(--ink);
+      color: var(--parchment);
+      border: 1px solid var(--ink);
+    }
+
+    .sender-name {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .message.assistant .sender-name { color: var(--gold); }
+    .message.user .sender-name { color: var(--parchment-dark); }
+
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 14px 18px;
+      background: var(--barnabas-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      width: fit-content;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: typingBounce 1.2s infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    footer {
+      background: var(--parchment-dark);
+      border-top: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    #user-input {
+      flex: 1;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      resize: none;
+      min-height: 48px;
+      max-height: 140px;
+      line-height: 1.5;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #user-input:focus {
+      border-color: var(--gold);
+    }
+
+    #user-input::placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    #send-btn {
+      background: var(--ink);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 12px 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.2s;
+      height: 48px;
+      white-space: nowrap;
+    }
+
+    #send-btn:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    #send-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .new-session-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 2px;
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      height: 48px;
+      transition: all 0.2s;
+    }
+
+    .new-session-btn:hover {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+    }
+
+    .welcome-message {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+
+    .welcome-message .cross {
+      font-size: 2.5rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .welcome-message h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .welcome-message p {
+      font-size: 0.95rem;
+      font-style: italic;
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="cross-icon">✝</div>
+  <div class="header-text">
+    <h1>Great Physician</h1>
+    <p>Barnabas — Biblical Counselor</p>
+  </div>
+  <div class="status-dot"></div>
+</header>
+
+<div id="chat-window">
+  <div class="welcome-message" id="welcome">
+    <span class="cross">✝</span>
+    <h2>Peace be with you</h2>
+    <p>Share what is on your heart. Barnabas will walk with you through God's Word.</p>
+  </div>
+</div>
+
+<footer>
+  <button class="new-session-btn" onclick="newSession()" title="New session">↺</button>
+  <textarea id="user-input" placeholder="Share what is on your heart..." rows="1"
+    onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+  <button id="send-btn" onclick="sendMessage()">Send</button>
+</footer>
+
+<script>
+  const API = 'https://great-physician-production.up.railway.app';
+  let sessionId = null;
+  let history = [];
+  let isLoading = false;
+
+  const chatWindow = document.getElementById('chat-window');
+  const input = document.getElementById('user-input');
+  const sendBtn = document.getElementById('send-btn');
+
+  function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 140) + 'px';
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  }
+
+  function removeWelcome() {
+    const welcome = document.getElementById('welcome');
+    if (welcome) welcome.remove();
+  }
+
+  function appendMessage(role, text) {
+    removeWelcome();
+    const msg = document.createElement('div');
+    msg.className = `message ${role}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar';
+    avatar.textContent = role === 'assistant' ? '✝' : '✦';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+
+    const name = document.createElement('div');
+    name.className = 'sender-name';
+    name.textContent = role === 'assistant' ? 'Barnabas' : 'You';
+
+    const content = document.createElement('div');
+    content.innerHTML = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+
+    bubble.appendChild(name);
+    bubble.appendChild(content);
+    msg.appendChild(avatar);
+    msg.appendChild(bubble);
+    chatWindow.appendChild(msg);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+
+  function showTyping() {
+    const el = document.createElement('div');
+    el.className = 'message assistant';
+    el.id = 'typing';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar';
+    avatar.textContent = '✝';
+
+    const indicator = document.createElement('div');
+    indicator.className = 'typing-indicator';
+    for (let i = 0; i < 3; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'typing-dot';
+      indicator.appendChild(dot);
+    }
+
+    el.appendChild(avatar);
+    el.appendChild(indicator);
+    chatWindow.appendChild(el);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('typing');
+    if (el) el.remove();
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text || isLoading) return;
+
+    isLoading = true;
+    sendBtn.disabled = true;
+    input.value = '';
+    input.style.height = 'auto';
+
+    appendMessage('user', text);
+    showTyping();
+
+    try {
+      const res = await fetch(`${API}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, sessionId, history })
+      });
+
+      const data = await res.json();
+      removeTyping();
+
+      if (data.reply) {
+        appendMessage('assistant', data.reply);
+        sessionId = data.sessionId;
+        history.push({ role: 'user', content: text });
+        history.push({ role: 'assistant', content: data.reply });
+      } else {
+        appendMessage('assistant', 'I\'m sorry, something went wrong. Please try again.');
+      }
+    } catch (err) {
+      removeTyping();
+      appendMessage('assistant', 'Unable to reach the server. Please check your connection.');
+    }
+
+    isLoading = false;
+    sendBtn.disabled = false;
+    input.focus();
+  }
+
+  function newSession() {
+    if (!confirm('Start a new session? This will clear the current conversation.')) return;
+    sessionId = null;
+    history = [];
+    chatWindow.innerHTML = `
+      <div class="welcome-message" id="welcome">
+        <span class="cross">✝</span>
+        <h2>Peace be with you</h2>
+        <p>Share what is on your heart. Barnabas will walk with you through God's Word.</p>
+      </div>`;
+  }
+
+  // Auto-start with greeting
+  window.onload = async () => {
+    input.focus();
+    showTyping();
+    try {
+      const res = await fetch(`${API}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: "Hello, I need some help",
+          sessionId: null,
+          history: []
+        })
+      });
+      const data = await res.json();
+      removeTyping();
+      if (data.reply) {
+        removeWelcome();
+        appendMessage('assistant', data.reply);
+        sessionId = data.sessionId;
+        history.push({ role: 'user', content: 'Hello, I need some help' });
+        history.push({ role: 'assistant', content: data.reply });
+      }
+    } catch (e) {
+      removeTyping();
+    }
+  };
+</script>
+</body>
+</html>
