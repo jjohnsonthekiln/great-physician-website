@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counselor Signup — Great Physician</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #faf8f4;
+      --surface:   #f0ebe0;
+      --border:    #e0d8cc;
+      --text-dark: #2c1a0e;
+      --text-mid:  #7a6a58;
+      --text-light:#b0a090;
+      --gold:      #c9a84c;
+      --gold-dark: #8b5e1a;
+      --gold-light:#f0e6cc;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .nav-back {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold-dark); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 600;
+      color: var(--gold-dark);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 24px;
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .hero-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ── Scripture banner ── */
+    .scripture-banner {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .scripture-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+    .scripture-ref {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ── Form card ── */
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(44,26,14,0.06);
+    }
+
+    .form-section-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 520px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .field label .req {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--text-light);
+      font-weight: 300;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6a58' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .field .hint {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text-light);
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    .section-gap {
+      margin-top: 32px;
+    }
+
+    /* ── Checkbox ── */
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .checkbox-field input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--gold-dark);
+      cursor: pointer;
+    }
+    .checkbox-field span {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .checkbox-field span a {
+      color: var(--gold-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── Submit button ── */
+    .submit-btn {
+      width: 100%;
+      background: var(--gold-dark);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 16px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .submit-btn:hover { background: #7a5216; }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-btn:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── Success state ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .success-msg.visible { display: block; }
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+    .success-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.3px;
+    }
+    footer a {
+      color: var(--text-mid);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--gold-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-brand">Great Physician</a>
+    <a href="/" class="nav-back">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.5 2.5L4 7l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to Home
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-eyebrow">Biblical Counsel for Your Soul</p>
+    <h1 class="hero-title">Join as a Counselor</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      "The heartfelt counsel of a friend is as sweet as perfume and incense."
+    </p>
+    <p class="hero-body">
+      Great Physician connects those seeking biblical guidance with trained, Christ-centered counselors.
+      If God has equipped you to walk alongside others through His Word, we'd be honored to have you join our community.
+    </p>
+  </div>
+
+  <!-- Scripture -->
+  <div class="scripture-banner">
+    <p class="scripture-text">"He heals the brokenhearted and binds up their wounds."</p>
+    <p class="scripture-ref">Psalm 147:3</p>
+  </div>
+
+  <!-- Form -->
+  <div class="form-wrap">
+    <div class="form-card">
+
+      <!-- Success message (shown after submit) -->
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">✝️</div>
+        <h2 class="success-title">Application Received</h2>
+        <p class="success-body">
+          Thank you for your willingness to serve. We will review your application
+          prayerfully and be in touch with you soon.
+        </p>
+      </div>
+
+      <!-- The form -->
+      <form id="counselorForm"
+            action="https://formspree.io/f/mojpvlzb"
+            method="POST">
+
+        <!-- Section 1: Contact -->
+        <p class="form-section-label">Contact Information</p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Calvin" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+        </div>
+
+        <!-- Section 2: Ministry -->
+        <div class="section-gap">
+          <p class="form-section-label">Church &amp; Ministry</p>
+        </div>
+
+        <div class="field">
+          <label for="church">Church Name <span class="req">*</span></label>
+          <input type="text" id="church" name="church" placeholder="Grace Community Church" required />
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Jackson" />
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="TN" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="role">Your Role in Ministry</label>
+          <select id="role" name="role">
+            <option value="" disabled selected>Select your role…</option>
+            <option>Pastor / Elder</option>
+            <option>Biblical Counselor</option>
+            <option>Deacon / Ministry Leader</option>
+            <option>Lay Counselor</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Section 3: Credentials -->
+        <div class="section-gap">
+          <p class="form-section-label">Counseling Training &amp; Credentials</p>
+        </div>
+
+        <div class="field">
+          <label for="training">Training &amp; Certifications</label>
+          <input type="text" id="training" name="training" placeholder="e.g. ACBC certified, CCEF coursework, seminary training…" />
+          <p class="hint">List any relevant biblical counseling certifications, training programs, or seminary coursework.</p>
+        </div>
+
+        <div class="field">
+          <label for="experience">Years of Counseling Experience</label>
+          <select id="experience" name="experience">
+            <option value="" disabled selected>Select…</option>
+            <option>Less than 1 year</option>
+            <option>1–3 years</option>
+            <option>3–5 years</option>
+            <option>5–10 years</option>
+            <option>10+ years</option>
+          </select>
+        </div>
+
+        <!-- Section 4: Statement -->
+        <div class="section-gap">
+          <p class="form-section-label">Personal Statement</p>
+        </div>
+
+        <div class="field">
+          <label for="statement">Why do you want to counsel with Great Physician? <span class="req">*</span></label>
+          <textarea id="statement" name="statement" placeholder="Share briefly what motivates you to offer biblical counsel, your approach to Scripture-centered care, and what you hope to bring to those who are hurting…" required></textarea>
+          <p class="hint">200–400 words is ideal.</p>
+        </div>
+
+        <!-- Agreement -->
+        <div class="checkbox-field">
+          <input type="checkbox" id="agree" name="agree" required />
+          <span>
+            I affirm that my counsel will be grounded in Scripture and consistent with the
+            historic Christian faith. I have read and agree to the
+            <a href="#">Counselor Guidelines</a>.
+          </span>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Submit Application
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Great Physician &nbsp;·&nbsp; <a href="/">thegreatphysician.ai</a>
+  </footer>
+
+  <script>
+    const form = document.getElementById('counselorForm');
+    const btn  = document.getElementById('submitBtn');
+    const msg  = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          msg.classList.add('visible');
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Submit Application';
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Submit Application';
+        alert('Network error. Please check your connection and try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
