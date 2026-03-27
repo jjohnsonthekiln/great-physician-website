@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counselor Guidelines — Great Physician</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #faf8f4; --surface: #f0ebe0; --border: #e0d8cc;
+      --text-dark: #2c1a0e; --text-mid: #7a6a58; --text-light: #b0a090;
+      --gold: #c9a84c; --gold-dark: #8b5e1a;
+    }
+    body { background: var(--bg); color: var(--text-dark); font-family: 'Montserrat', sans-serif; min-height: 100vh; }
+    nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--gold-dark); text-decoration: none; }
+    .nav-back { font-size: 12px; font-weight: 500; color: var(--text-mid); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold-dark); }
+    .hero { text-align: center; padding: 72px 24px 56px; background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+    .hero-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 600; color: var(--gold-dark); line-height: 1.15; margin-bottom: 20px; }
+    .hero-divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 28px; }
+    .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--text-mid); line-height: 1.7; max-width: 600px; margin: 0 auto 10px; }
+    .hero-ref { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+    .toc-wrap { max-width: 760px; margin: 48px auto 0; padding: 0 24px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 28px 32px; }
+    .toc-title { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 8px; font-size: 13px; font-weight: 400; color: var(--text-mid); display: flex; gap: 10px; align-items: baseline; }
+    .toc li::before { content: counter(toc, upper-roman) "."; font-size: 10px; font-weight: 600; color: var(--gold-dark); min-width: 28px; letter-spacing: 0.5px; }
+    .toc a { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .toc a:hover { color: var(--gold-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px 96px; }
+    .guideline-section { margin-bottom: 64px; }
+    .section-number { font-size: 9px; font-weight: 600; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--gold-dark); margin-bottom: 20px; line-height: 1.2; }
+    .section-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 24px; }
+    .section-body { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.9; }
+    .section-body p { margin-bottom: 16px; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .pull-quote { background: var(--surface); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; padding: 24px 28px; margin: 32px 0; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--gold-dark); line-height: 1.6; margin-bottom: 10px !important; }
+    .pull-quote cite { font-size: 10px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; font-style: normal; }
+    .guideline-list { list-style: none; counter-reset: gl; margin-top: 16px; }
+    .guideline-list li { counter-increment: gl; display: flex; gap: 16px; margin-bottom: 18px; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .guideline-list li::before { content: counter(gl); min-width: 24px; height: 24px; background: var(--gold); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+    .plain-list { list-style: none; margin-top: 16px; }
+    .plain-list li { padding-left: 20px; position: relative; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 10px; }
+    .plain-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
+    .note-box { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .note-box strong { color: var(--gold-dark); font-weight: 600; display: block; margin-bottom: 6px; }
+    .warning-box { background: rgba(139,94,26,0.05); border: 1px solid rgba(139,94,26,0.2); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .warning-box strong { color: var(--gold-dark); font-weight: 600; display: block; margin-bottom: 6px; }
+    .full-divider { border: none; border-top: 1px solid var(--border); margin: 64px 0; }
+    .cta-block { text-align: center; padding: 48px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    .cta-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--gold-dark); margin-bottom: 12px; }
+    .cta-block p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; max-width: 440px; margin: 0 auto 28px; }
+    .btn-primary { background: var(--gold-dark); color: #fff; padding: 14px 32px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-primary:hover { background: #7a5216; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px 32px; text-align: center; font-size: 11px; font-weight: 300; color: var(--text-light); }
+    footer a { color: var(--text-mid); text-decoration: none; }
+    footer a:hover { color: var(--gold-dark); }
+    .dk { color: var(--text-dark); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Great Physician</a>
+  <a href="/counsel" class="nav-back">← Back to Counselor Signup</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Great Physician · The Kiln Ministries</p>
+  <h1 class="hero-title">Counselor Guidelines</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-sub">"Pay close attention to yourself and to your teaching; persevere in these things, for as you do this you will ensure salvation both for yourself and for those who hear you."</p>
+  <p class="hero-ref">1 Timothy 4:16</p>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#preamble">Preamble: The Nature of Biblical Counseling</a></li>
+      <li><a href="#scripture">The Authority and Sufficiency of Scripture</a></li>
+      <li><a href="#theology">Theological Commitments</a></li>
+      <li><a href="#qualifications">Counselor Qualifications</a></li>
+      <li><a href="#conduct">Standards of Conduct</a></li>
+      <li><a href="#practice">Counseling Practice</a></li>
+      <li><a href="#secular">Scripture, Science, and Secular Psychology</a></li>
+      <li><a href="#referral">Mandatory Referral and Reporting</a></li>
+      <li><a href="#platform">Platform Policies</a></li>
+      <li><a href="#faith">Statement of Faith</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="guideline-section" id="preamble">
+    <p class="section-number">Section I</p>
+    <h2 class="section-title">Preamble: The Nature of Biblical Counseling</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>Biblical counseling is, at its heart, a theological task. To understand why a person suffers, why they sin, what they truly need, and how lasting change happens — these are not primarily psychological questions. They are questions about God, human nature, sin, grace, and redemption. Every counselor who takes Scripture seriously must begin here.</p>
+      <p>Great Physician exists to bring the healing Word of God to souls in need, and to connect those souls with trained, Christ-centered counselors who can walk alongside them with wisdom and compassion. We believe that God's Word is not merely <em>helpful</em> in the counseling room — it is <em>sufficient</em>. It tells us who we are, what has gone wrong, and what God has done in Christ to make it right.</p>
+      <p>The Lord Jesus is himself the Great Physician. It is his name we carry, his ministry we extend, and his character we are called to reflect in every counseling relationship. These guidelines are not bureaucratic compliance — they flow from our deepest convictions about what soul care is and what it requires of those who practice it. By joining as a counselor, you affirm them as your own.</p>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="scripture">
+    <p class="section-number">Section II</p>
+    <h2 class="section-title">The Authority and Sufficiency of Scripture</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>The sixty-six books of the Old and New Testaments are the inspired, inerrant, and infallible Word of God — breathed out by him to make his people complete and equipped for every good work (2 Tim. 3:16–17). This includes the good work of counseling.</p>
+      <p>Scripture speaks authoritatively over all aspects of human life — including the struggles, sins, sorrows, and relational failures that bring people into the counseling room. Biblical counselors hold that the Bible addresses the spiritual and moral dimensions of human experience with sufficient authority and wisdom to guide counselors in helping people change from the inside out.</p>
+      <p>Counselors are expected to use Scripture actively — as the primary instrument through which God diagnoses the heart, calls people to repentance, and produces genuine transformation. At the same time, using Scripture faithfully requires handling it carefully. Every biblical text must be interpreted in its proper literary, grammatical, and historical context. Proof-texting — stripping verses from their context to support a conclusion already reached — dishonors God's Word and may harm the counselee. Counselors must also distinguish clearly between what the text plainly teaches and what represents their own application or inference derived from it.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"His divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us to his own glory and excellence."</p>
+      <cite>2 Peter 1:3</cite>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="theology">
+    <p class="section-number">Section III</p>
+    <h2 class="section-title">Theological Commitments</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>Faithful biblical counseling requires faithful biblical theology. The following convictions are not peripheral — they shape how a counselor understands the counselee, diagnoses the problem, and offers hope. Every Great Physician counselor must hold these without reservation:</p>
+    </div>
+    <ul class="guideline-list">
+      <li><span class="dk">The Triune God.</span> The Father, Son, and Holy Spirit are one God in three persons. The Father is the sovereign Creator and Redeemer. Jesus Christ, the Son, is the Great Physician — fully God and fully man — who atoned for sin in his death and conquered death in his resurrection. The Holy Spirit is the promised Counselor, the true agent of conviction, illumination, and sanctification. All three persons are active in the work of biblical counseling.</li>
+      <li><span class="dk">The Reality of Sin and Suffering.</span> Human beings are made in the image of God and yet fallen in Adam. Sin — not merely circumstance or chemistry — lies at the root of the counselee's deepest problems. Biblical counselors must name sin honestly, call counselees to genuine repentance, and offer the full grace of Christ — not behavior management or coping strategies.</li>
+      <li><span class="dk">The Gospel as the Center.</span> Jesus Christ died as the substitutionary atonement for sin and rose bodily from the dead. The gospel is not a starting point that counselees move past — it is the engine of all lasting change. Counselors must continually lead counselees back to the grace available to them in Christ, not merely the duties required of them.</li>
+      <li><span class="dk">The Great Commission as the Frame.</span> Jesus commands his people to make disciples, teaching them to obey all that he commanded (Matt. 28:18–20). Biblical counseling is a form of discipleship — the Great Commission applied to those who are suffering, struggling, and sinning. Every counseling conversation should ultimately have Jesus Christ as its goal.</li>
+      <li><span class="dk">The Necessity of the Church.</span> The local church is God's ordained community for the care of souls. Biblical counseling is not a substitute for the church — it is an expression of the church's ministry. Great Physician counselors actively encourage every counselee toward faithful participation in a local congregation and will never allow this platform to function as a replacement for it.</li>
+    </ul>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="qualifications">
+    <p class="section-number">Section IV</p>
+    <h2 class="section-title">Counselor Qualifications</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>We recognize that God equips his people in varied ways, and we do not believe formal credentials alone certify a counselor's fitness for ministry. Character, theological soundness, and demonstrated care for people weigh heavily in our review. The following qualifications are expected of all Great Physician counselors:</p>
+    </div>
+    <ul class="plain-list">
+      <li>Credible Christian faith and active membership in a local church</li>
+      <li>Full agreement with the Great Physician Statement of Faith (Section X below)</li>
+      <li>Training in biblical counseling — including ACBC certification, CCEF coursework, seminary training in pastoral or biblical counseling, or structured mentorship under a recognized biblical counselor</li>
+      <li>Demonstrated experience counseling individuals, couples, or families in a church or ministry context</li>
+      <li>A pastoral reference from a pastor, elder, or recognized church leader who can speak to both your character and your counseling competence</li>
+      <li>Full agreement with these Counselor Guidelines</li>
+    </ul>
+    <div class="note-box">
+      <strong>A Note on Licensure</strong>
+      Great Physician counselors provide biblical counseling — not licensed professional therapy or psychiatry. If you hold a state counseling license, you must be clear with counselees about the distinction between your role here and any licensed practice. You must never represent yourself as providing professional psychological or psychiatric services through this platform. We welcome those with professional training who are committed to Scripture's sufficiency and who do not allow licensure obligations to compromise biblical faithfulness.
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="conduct">
+    <p class="section-number">Section V</p>
+    <h2 class="section-title">Standards of Conduct</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>A counselor cannot consistently call counselees toward a life they are not themselves pursuing. The character of the counselor is not incidental to the ministry — it is part of it. Great Physician counselors are expected to model the following:</p>
+    </div>
+    <ul class="guideline-list">
+      <li><span class="dk">Integrity.</span> Represent yourself, your credentials, your affiliations, and your convictions truthfully at all times. Do not overstate your training, experience, or authority.</li>
+      <li><span class="dk">Confidentiality.</span> Hold all counselee disclosures in strict confidence, except where disclosure is required by law or where there is an imminent risk of harm to the counselee or others. Inform counselees of these limits at the outset of the relationship.</li>
+      <li><span class="dk">Purity.</span> Maintain appropriate relational and physical boundaries with all counselees. Cross-gender counseling should be conducted transparently and with appropriate accountability, consistent with your church's guidelines. Any romantic or sexual conduct with a counselee is a grave sin and grounds for immediate removal from the platform.</li>
+      <li><span class="dk">Humility.</span> Know the limits of your training and experience. Do not counsel beyond your competence without supervision. Refer when the situation calls for more than you can faithfully provide.</li>
+      <li><span class="dk">Accountability.</span> Submit to the oversight of your local church and, where applicable, your certifying body. Your pastor should be aware that you are serving through this platform.</li>
+      <li><span class="dk">Personal Holiness.</span> A counselor engaged in active, unrepentant sin is not fit to counsel others until genuine repentance and restoration have taken place. Walk above reproach — not to earn standing before God, but as an expression of the grace you are proclaiming to others.</li>
+    </ul>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="practice">
+    <p class="section-number">Section VI</p>
+    <h2 class="section-title">Counseling Practice</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>Great Physician operates within the nouthetic counseling tradition — the conviction that Scripture speaks with sufficient authority to address the full range of human problems. The Greek word <em>noutheteo</em> (translated "admonish" or "warn") captures the threefold movement of biblical counseling: speaking truth about sin, instructing in righteousness, and comforting with the hope of the gospel. The following practices define what we expect of counselors on this platform:</p>
+    </div>
+    <ul class="plain-list">
+      <li><span class="dk">Saturate counsel with Scripture.</span> God's Word must do its own work in the counseling room. Use Scripture as the primary lens through which problems are understood and hope is offered — not as an illustration appended to human wisdom.</li>
+      <li><span class="dk">Admonish, instruct, and comfort.</span> Name sin honestly and call for repentance. Teach the counselee what faithfulness looks like. Comfort them with the grace of Christ — all three movements working together, calibrated to what the counselee needs in each session.</li>
+      <li><span class="dk">Pray with and for your counselees.</span> Every session should include prayer. A counselor's own prayer life is not separable from the quality of their ministry to others.</li>
+      <li><span class="dk">Assign homework rooted in Scripture.</span> Lasting change happens throughout the week, not only in the counseling hour. Assign journaling, Scripture memory, biblical reading, and practical exercises that reinforce the work of each session.</li>
+      <li><span class="dk">Listen carefully before speaking.</span> Effective biblical counsel begins with understanding — the counselee's situation, their heart, their history, and their relationship with Christ. Take time to hear before you diagnose or prescribe.</li>
+      <li><span class="dk">Always pursue the local church.</span> Every counselee should be moving toward deeper, not shallower, involvement in a faithful local congregation. This platform supplements the ministry of the church; it does not replace it.</li>
+    </ul>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="secular">
+    <p class="section-number">Section VII</p>
+    <h2 class="section-title">Scripture, Science, and Secular Psychology</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>Biblical counselors acknowledge that God's common grace permits all people — believers and unbelievers alike — to observe and describe aspects of the created world with accuracy. A physician does not need to be a Christian to identify a thyroid disorder. A researcher does not need to be a Christian to document how sleep affects cognition. Where secular observation describes factual realities about the body or the world, biblical counselors can appropriately acknowledge it.</p>
+      <p>However, secular counseling and psychology operate with foundational assumptions about human nature, the source of human problems, and the path to change that are, at their root, at odds with Scripture. Where secular methods bypass repentance, replace the gospel, or redefine human flourishing apart from God — they are not merely incomplete. They are insufficient and often misleading for the counseling task.</p>
+      <p>Great Physician counselors do not treat secular therapeutic frameworks as equally authoritative alongside Scripture. We do not refer counselees to secular therapy as the primary resource for what are fundamentally spiritual and moral problems. We actively encourage counselees to seek appropriate medical evaluation where there is a genuine medical question — biblical counseling and medical care are not in conflict — but we do not outsource the spiritual dimensions of their struggle to a system that cannot address them.</p>
+    </div>
+    <div class="pull-quote">
+      <p>"See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ."</p>
+      <cite>Colossians 2:8</cite>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="referral">
+    <p class="section-number">Section VIII</p>
+    <h2 class="section-title">Mandatory Referral and Reporting</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>Humility requires knowing when a situation exceeds your competence, and faithfulness requires knowing when the law obligates you to act. The following situations require immediate action beyond the counseling relationship:</p>
+    </div>
+    <ul class="plain-list">
+      <li><span class="dk">Suicidal ideation or intent to harm.</span> If a counselee expresses active intent to harm themselves or others, contact emergency services immediately. Notify the counselee's pastor and, where appropriate, their family. Do not continue the counseling session as though nothing has changed until safety is established.</li>
+      <li><span class="dk">Abuse of a child or vulnerable adult.</span> Biblical counselors are obligated — morally and legally — to report credible disclosures of child abuse or abuse of a vulnerable adult to the appropriate civil authorities. Know the mandatory reporting laws in your jurisdiction and comply with them without hesitation. Civil government bears God-given authority to act in these matters (Rom. 13:1–4).</li>
+      <li><span class="dk">Apparent medical emergencies.</span> If a counselee presents with symptoms suggesting a medical emergency — psychosis, acute neurological symptoms, severe physical distress — direct them to seek medical attention immediately. Biblical counseling and appropriate medical care are not in conflict with one another.</li>
+      <li><span class="dk">Cases beyond your competence.</span> When the complexity of a counselee's situation exceeds your training or experience, seek supervision from a more experienced counselor or make a careful referral. Referring is not failure — it is faithful care.</li>
+    </ul>
+    <div class="warning-box">
+      <strong>Confidentiality Has Limits</strong>
+      Inform counselees at the beginning of the counseling relationship that confidentiality is not absolute — that disclosures involving abuse or imminent danger may require action beyond the counseling room. This is not a violation of trust. It is an honest foundation for the relationship and a protection for the counselee.
+    </div>
+    <div class="section-body">
+      <p>Abuse cases are among the most complex a biblical counselor will face. They are often entangled with long patterns of sin and suffering and carry both pastoral and legal dimensions. Approach them with patience, wisdom, and the full weight of Christ's care — confronting evil, protecting the vulnerable, and compassionately ministering to the wounded. Notify Great Physician administration promptly whenever a safety concern arises involving a counselee.</p>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="platform">
+    <p class="section-number">Section IX</p>
+    <h2 class="section-title">Platform Policies</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>In addition to the theological and ethical standards above, all counselors agree to the following operational policies:</p>
+    </div>
+    <ul class="plain-list">
+      <li>Do not solicit counselees for paid services, personal ministry promotion, or outside engagements without explicit permission from Great Physician administration</li>
+      <li>Respond to counselees in a timely manner; unresponsiveness causes real harm and reflects poorly on the ministry</li>
+      <li>Notify Great Physician administration promptly of any safety concern involving a counselee, including abuse disclosures or expressions of suicidal intent</li>
+      <li>Submit to periodic review of your counseling practice by Great Physician leadership as requested</li>
+      <li>Notify Great Physician administration if you face church discipline, removal from a certifying body, or any development that materially affects your fitness for this ministry</li>
+      <li>These guidelines may be updated over time; continued participation on the platform constitutes ongoing agreement with the current version</li>
+    </ul>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="guideline-section" id="faith">
+    <p class="section-number">Section X</p>
+    <h2 class="section-title">Statement of Faith</h2>
+    <div class="section-divider"></div>
+    <div class="section-body">
+      <p>By joining Great Physician as a counselor, you affirm the following without reservation:</p>
+    </div>
+    <ul class="plain-list">
+      <li>The Bible — all sixty-six books of the Old and New Testaments — is the inspired, inerrant, and infallible Word of God, the supreme and sufficient authority for all matters of faith, life, and counseling</li>
+      <li>There is one God, eternally existing in three persons: Father, Son, and Holy Spirit — each fully and equally God, each distinct in person</li>
+      <li>Jesus Christ is fully God and fully man; he was born of a virgin, lived a sinless life, died as the substitutionary atonement for sin, rose bodily from the dead, ascended to the right hand of the Father, and will return in glory to judge the living and the dead</li>
+      <li>The Holy Spirit is the third person of the Trinity, the promised Counselor, who convicts of sin, regenerates the heart, indwells every believer, and is the sovereign agent of sanctification and lasting change</li>
+      <li>All human beings are made in the image of God and yet fallen in Adam — guilty before God and in need of redemption through Christ alone</li>
+      <li>Salvation is by grace alone, through faith alone, in Christ alone — it is not merited by human effort, religious activity, or moral achievement</li>
+      <li>The local church — the gathered body of Christ — is God's ordained community for worship, discipleship, and the care of souls; biblical counseling is a ministry of the church and is accountable to it</li>
+    </ul>
+    <div class="pull-quote">
+      <p>"All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work."</p>
+      <cite>2 Timothy 3:16–17</cite>
+    </div>
+  </div>
+
+  <hr class="full-divider" />
+
+  <div class="cta-block">
+    <h3>Ready to Apply?</h3>
+    <p>If you affirm these guidelines and sense God's call to serve in this way, we'd be honored to receive your application.</p>
+    <a href="/counsel" class="btn-primary">Submit Your Application →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 The Kiln Ministries · Nashville, Tennessee &nbsp;·&nbsp; <a href="/">thegreatphysician.ai</a></p>
+  <p style="margin-top:6px;"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/counsel">Counselor Signup</a></p>
+</footer>
+
+</body>
+</html>
