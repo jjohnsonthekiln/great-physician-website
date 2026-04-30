@@ -21,9 +21,10 @@
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold-dark); }
+    .nav-links a.active { color: var(--gold-dark); }
 
     .page-hero {
-      padding: 140px 24px 80px; text-align: center;
+      padding: 140px 24px 60px; text-align: center;
       background: radial-gradient(ellipse at 50% 30%, #f0ebe0 0%, #faf8f4 100%);
       border-bottom: 1px solid var(--border);
     }
@@ -31,13 +32,45 @@
     .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--text-dark); margin-bottom: 16px; }
     .page-body { font-size: 0.95rem; color: var(--text-mid); max-width: 560px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
 
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
-    .blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 32px; transition: all 0.3s; text-decoration: none; display: block; }
+    .filter-bar {
+      max-width: 1100px; margin: 0 auto; padding: 32px 24px 0;
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    }
+    .filter-btn {
+      background: transparent; border: 1px solid var(--border); border-radius: 999px;
+      padding: 8px 18px; font-family: 'Montserrat', sans-serif; font-size: 0.7rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--text-dark); }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: white; }
+
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px;
+    }
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+      padding: 32px; transition: all 0.3s; text-decoration: none; display: block;
+      position: relative;
+    }
     .blog-card:hover { border-color: var(--gold); background: var(--cream); transform: translateY(-3px); }
+    .blog-card.featured::before {
+      content: "Featured"; position: absolute; top: 16px; right: 16px;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold-dark); background: var(--cream); border: 1px solid var(--gold);
+      padding: 4px 10px; border-radius: 999px;
+    }
     .blog-date { font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 12px; }
+    .blog-category { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--text-mid); text-transform: uppercase; margin-bottom: 4px; }
     .blog-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 12px; line-height: 1.4; }
     .blog-excerpt { font-size: 0.83rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; }
     .blog-read-more { font-size: 0.72rem; letter-spacing: 0.2em; color: var(--gold-dark); text-transform: uppercase; margin-top: 16px; display: inline-block; }
+
+    .empty-state, .error-state {
+      grid-column: 1 / -1; text-align: center; padding: 80px 24px; color: var(--text-mid);
+    }
+    .empty-state p, .error-state p { margin-bottom: 12px; }
 
     footer { padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); background: var(--surface); }
     footer p { font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.1em; line-height: 2; }
@@ -52,7 +85,7 @@
   <a href="/" class="nav-brand">Great Physician</a>
   <ul class="nav-links">
     <li><a href="/#about">About</a></li>
-    <li><a href="/blog">Blog</a></li>
+    <li><a href="/blog" class="active">Blog</a></li>
     <li><a href="/#download">Download</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/#donate">Give</a></li>
@@ -65,37 +98,109 @@
   <p class="page-body">Articles, reflections, and biblical counsel from The Kiln — written to equip and encourage you on the path of faith.</p>
 </div>
 
-<div class="blog-grid">
-  <a class="blog-card" href="posts/there-is-no-seam.html">
-    <div class="blog-date">April 29, 2026</div>
-    <div class="blog-title">There Is No Seam: The Trinitarian Beauty of Ephesians 1</div>
-    <p class="blog-excerpt">In Greek, it is a single sentence. Twelve verses. Paul builds it like a vault of arches climbing toward heaven — teaching that salvation is Trinitarian from beginning to end, and that there is no seam through which a believer can fall.</p>
-    <span class="blog-read-more">Read More →</span>
-  </a>
-  <a class="blog-card" href="posts/social-media.html">
-    <div class="blog-date">March 14, 2026</div>
-    <div class="blog-title">Help! I'm Spending Too Much Time on Social Media!</div>
-    <p class="blog-excerpt">You didn't plan to spend an hour on TikTok. You never do. But the algorithm is patient. Few passages speak more directly to this than Ephesians 5:8–17.</p>
-    <span class="blog-read-more">Read More →</span>
-  </a>
-  <a class="blog-card" href="posts/anger.html" target="_blank" rel="noopener">
-    <div class="blog-date">March 14, 2026</div>
-    <div class="blog-title">Conquering Anger by GRACE</div>
-    <p class="blog-excerpt">Sinful anger is an emotion rooted in pride, selfishness, or a desire for revenge. It manifests as outbursts, bitterness, and malice — what Scripture calls "wrath" or "rage."</p>
-    <span class="blog-read-more">Read More →</span>
-  </a>
-  <a class="blog-card" href="posts/emotions.html" target="_blank" rel="noopener">
-    <div class="blog-date">March 14, 2026</div>
-    <div class="blog-title">Emotions in Biblical Counseling</div>
-    <p class="blog-excerpt">Emotions are a window into a person's heart, enabling a counselor to gauge spiritual maturity, integrity, and the fruit of the Spirit.</p>
-    <span class="blog-read-more">Read More →</span>
-  </a>
+<div id="filter-bar" class="filter-bar"></div>
+
+<div id="blog-grid" class="blog-grid">
+  <div class="empty-state"><p>Loading posts…</p></div>
 </div>
 
 <footer>
   <p>© 2026 The Kiln · Nashville, Tennessee</p>
-  <p style="margin-top: 8px;"><a href="https://thegreatphysician.ai/privacy">Privacy Policy</a> · <a href="mailto:support@thekiln.org">support@thekiln.org</a></p>
+  <p style="margin-top: 8px;"><a href="/privacy">Privacy Policy</a> · <a href="mailto:support@thekiln.org">support@thekiln.org</a></p>
 </footer>
+
+<script>
+(function() {
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    const parts = iso.split('-');
+    if (parts.length !== 3) return iso;
+    const [y, m, d] = parts.map(Number);
+    if (!y || !m || !d) return iso;
+    return `${months[m-1]} ${d}, ${y}`;
+  }
+
+  function sortPosts(posts) {
+    return posts.slice().sort((a, b) => {
+      if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
+      return (b.date || '').localeCompare(a.date || '');
+    });
+  }
+
+  function renderCards(posts) {
+    const grid = document.getElementById('blog-grid');
+    if (!posts.length) {
+      grid.innerHTML = '<div class="empty-state"><p>No posts in this category yet.</p></div>';
+      return;
+    }
+    grid.innerHTML = posts.map(post => {
+      const featured = post.featured ? ' featured' : '';
+      const cat = post.category ? `<div class="blog-category">${escapeHtml(post.category)}</div>` : '';
+      return `
+        <a class="blog-card${featured}" href="post.html?slug=${encodeURIComponent(post.slug)}">
+          <div class="blog-date">${escapeHtml(formatDate(post.date))}</div>
+          ${cat}
+          <div class="blog-title">${escapeHtml(post.title)}</div>
+          <p class="blog-excerpt">${escapeHtml(post.excerpt || '')}</p>
+          <span class="blog-read-more">Read More →</span>
+        </a>
+      `;
+    }).join('');
+  }
+
+  function renderFilters(posts, activeCategory, onSelect) {
+    const cats = ['All', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
+    const bar = document.getElementById('filter-bar');
+    bar.innerHTML = cats.map(c => {
+      const active = c === activeCategory ? ' active' : '';
+      return `<button class="filter-btn${active}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`;
+    }).join('');
+    bar.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => onSelect(btn.getAttribute('data-cat')));
+    });
+  }
+
+  let allPosts = [];
+  let currentCategory = 'All';
+
+  function update() {
+    const filtered = currentCategory === 'All'
+      ? allPosts
+      : allPosts.filter(p => p.category === currentCategory);
+    renderCards(sortPosts(filtered));
+    renderFilters(allPosts, currentCategory, (cat) => {
+      currentCategory = cat;
+      update();
+    });
+  }
+
+  fetch('posts/posts.json', { cache: 'no-cache' })
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => {
+      allPosts = Array.isArray(data) ? data : [];
+      update();
+    })
+    .catch(err => {
+      const grid = document.getElementById('blog-grid');
+      grid.innerHTML = `<div class="error-state"><p>Could not load posts.</p><p style="font-size:0.75rem;">${escapeHtml(err.message)}</p></div>`;
+      console.error(err);
+    });
+})();
+</script>
 
 </body>
 </html>

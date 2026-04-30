@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects
+# Preserves legacy /Posts/*.html and /posts/*.html URLs.
+
+/Posts/social-media.html      /post.html?slug=social-media-too-much-time      301
+/Posts/anger.html             /post.html?slug=conquering-anger-by-grace       301
+/Posts/emotions.html          /post.html?slug=emotions-in-biblical-counseling 301
+/Posts/there-is-no-seam.html  /post.html?slug=there-is-no-seam                301
+
+/posts/social-media.html      /post.html?slug=social-media-too-much-time      301
+/posts/anger.html             /post.html?slug=conquering-anger-by-grace       301
+/posts/emotions.html          /post.html?slug=emotions-in-biblical-counseling 301
+/posts/there-is-no-seam.html  /post.html?slug=there-is-no-seam                301
