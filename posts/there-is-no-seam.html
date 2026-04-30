@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>There Is No Seam — Great Physician</title>
+  <meta name="description" content="The Trinitarian beauty of Ephesians 1, and what it means for the trembling believer.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #faf8f4; --surface: #f0ebe0; --border: #e0d8cc; --gold: #c9a84c; --gold-dark: #8b5e1a; --text-dark: #2c1a0e; --text-mid: #7a6a58; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(250,248,244,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--text-dark); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .post-hero { padding: 130px 24px 60px; text-align: center; background: radial-gradient(ellipse at 50% 30%, #f0ebe0 0%, #faf8f4 100%); border-bottom: 1px solid var(--border); }
+    .post-category { font-size: 0.68rem; letter-spacing: 0.45em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 16px; }
+    .post-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-dark); line-height: 1.15; max-width: 800px; margin: 0 auto 20px; }
+    .post-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: var(--gold-dark); max-width: 640px; margin: 0 auto 20px; font-weight: 300; }
+    .post-meta { font-size: 0.75rem; color: var(--text-mid); letter-spacing: 0.15em; }
+    .post-body { max-width: 680px; margin: 0 auto; padding: 72px 24px; }
+    .post-body p { font-size: 0.95rem; line-height: 1.95; color: var(--text-mid); font-weight: 300; margin-bottom: 24px; }
+    .post-body p.lead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--text-dark); line-height: 1.6; margin-bottom: 28px; }
+    .post-body p.pull { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--gold-dark); text-align: center; line-height: 1.5; margin: 32px 0; padding: 0 12px; }
+    .post-body p.seam { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--text-dark); text-align: center; margin: 36px 0; font-weight: 300; }
+    .post-body p.seam em { color: var(--gold-dark); font-style: italic; }
+    .post-body p.closing { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--gold-dark); margin: 0; }
+    .post-body em { color: var(--gold-dark); font-style: italic; }
+    .post-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--text-dark); margin: 40px 0 16px; }
+    .post-body h3 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; color: var(--gold-dark); text-transform: uppercase; margin: 32px 0 12px; }
+    .scripture-block { border-left: 3px solid var(--gold); background: var(--surface); padding: 20px 24px; margin: 28px 0; border-radius: 2px; }
+    .scripture-block p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--text-dark); margin-bottom: 8px !important; line-height: 1.6; }
+    .scripture-block .ref { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold-dark); font-style: normal; margin-bottom: 0 !important; }
+    .gold-rule { width: 60px; height: 1px; background: var(--gold); margin: 48px auto; }
+    .post-nav { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 32px; margin-top: 48px; flex-wrap: wrap; gap: 16px; }
+    .post-nav a { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold-dark); text-transform: uppercase; text-decoration: none; }
+    .post-nav a:hover { color: var(--text-dark); }
+    .related { background: var(--surface); border-top: 1px solid var(--border); padding: 60px 24px; }
+    .related-inner { max-width: 680px; margin: 0 auto; }
+    .related-label { font-size: 0.68rem; letter-spacing: 0.4em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .related-card { background: var(--cream); border: 1px solid var(--border); border-radius: 4px; padding: 20px; text-decoration: none; display: block; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--gold); }
+    .related-date { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 8px; }
+    .related-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); line-height: 1.4; }
+    footer { padding: 40px 24px; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.1em; line-height: 2; }
+    footer a { color: var(--gold-dark); text-decoration: none; }
+    @media (max-width: 768px) { nav { padding: 16px 20px; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-brand">Great Physician</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#download">Download</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#donate">Give</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <p class="post-category">Devotional</p>
+  <h1 class="post-title">There Is No Seam</h1>
+  <p class="post-subtitle">The Trinitarian Beauty of Ephesians 1</p>
+  <p class="post-meta">April 29, 2026 · Jeff Johnson · The Kiln</p>
+</div>
+<div class="post-body">
+
+  <p class="lead">Some passages of Scripture are quiet — small, intimate, almost whispered. Others are cathedrals.</p>
+
+  <p>Ephesians 1:3–14 is a cathedral.</p>
+
+  <p>In Greek, it is a single sentence. Twelve verses. Two hundred and two words. Paul builds it like a vault of arches climbing toward heaven, and the architecture is not accidental. He is not constructing an abstract theological treatise. He is teaching the church that salvation is Trinitarian from beginning to end. Every stage. Every moment. Every thread.</p>
+
+  <p>And the practical implications for the trembling believer are staggering.</p>
+
+  <h2>The Architecture</h2>
+
+  <p>The passage divides with unmistakable precision. Paul moves through three movements, each devoted to one Person of the Triune God:</p>
+
+  <p><strong><em>The Father</em></strong> (vv. 3–6) — who chose us before the foundation of the world, predestined us for adoption, and made us accepted in the Beloved.</p>
+
+  <p><strong><em>The Son</em></strong> (vv. 7–12) — in whom we have redemption through His blood, the forgiveness of trespasses, and the inheritance promised to those who trust Him.</p>
+
+  <p><strong><em>The Spirit</em></strong> (vv. 13–14) — who seals us upon belief and serves as the down payment of our coming inheritance.</p>
+
+  <p>Father chooses. Son redeems. Spirit seals.</p>
+
+  <p>This is not three Gods doing three things. This is one God — Father, Son, and Spirit — whose every Person has personally invested Himself in the rescue of your soul. There is no moment in the salvation process that is impersonal. There is no stage that is mechanical. There is no link in the chain that is staffed by some lesser deputy. The entire Godhead has staked itself on the rescue of your soul, <em>"to the praise of His glorious grace"</em> (v. 6).</p>
+
+  <h2>No Seam Through Which You Can Fall</h2>
+
+  <p>This is where the doctrine becomes pastoral.</p>
+
+  <p>If you are a believer in Jesus Christ, the joint and inseparable work of Father, Son, and Spirit means there is no seam through which you can fall.</p>
+
+  <p>Read that again.</p>
+
+  <p>The Father chose you. The Son bought you. The Spirit sealed you. These are not three separate transactions in some divine bureaucracy where one Person might lose track of you while another isn't paying attention. This is the unbreakable agreement of a Triune God who has set His love on you and will not let it go.</p>
+
+  <p>Paul says it plainly elsewhere:</p>
+
+  <div class="scripture-block">
+    <p>"Neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."</p>
+    <p class="ref">Romans 8:38–39</p>
+  </div>
+
+  <p>If you ever feel weak and wonder whether God truly loves you, Ephesians 1 invites you to see something almost too wonderful to believe: <em>the Father loves you with the same love with which He loves the Son.</em> Jesus Himself prays this in John 17:23 — <em>"that the world may know that you sent me and loved them even as you loved me."</em> Because you are united to the Son by faith, you are inseparable from the love of the Father.</p>
+
+  <p>And the Spirit — given to you the moment you believed — is the seal, the down payment, the <em>guarantee</em> of all that is yet to come.</p>
+
+  <h2>The Triune God Has Entered Your Condition</h2>
+
+  <p>There is one more layer of beauty here, and it is the layer that lifts the head of the depressed and breaks the back of pride.</p>
+
+  <p>The Trinitarian God of Ephesians 1 is not a distant theological abstraction. He is not a doctrine to be debated in a classroom. He is the God who has, through the Son, entered into your condition.</p>
+
+  <div class="scripture-block">
+    <p>"He has borne our griefs and carried our sorrows."</p>
+    <p class="ref">Isaiah 53:4</p>
+  </div>
+
+  <div class="scripture-block">
+    <p>"We do not have a high priest who is unable to sympathize with our weaknesses, but One who in every respect has been tempted as we are, yet without sin."</p>
+    <p class="ref">Hebrews 4:15</p>
+  </div>
+
+  <p>The full range of human temptation, sadness, and weakness — He has been there. Not as an observer. As a Man. The Son who redeems you in Ephesians 1:7 is the same Son who wept at Lazarus's tomb, who sweat blood in Gethsemane, who cried out in dereliction on the cross. This is not a salvation administered from a safe distance. This is salvation carried out by a God who came down into the wreckage to lift you out of it.</p>
+
+  <h2>What Would Change?</h2>
+
+  <p>So here is the question worth sitting with:</p>
+
+  <p class="pull">What would it mean for you today if your worth were based not on what you have done, but on what God did through Christ?</p>
+
+  <p>What would that do to your anxiety — the running tally of your failures, the dread that you have not measured up?</p>
+
+  <p>What would it do to your depression — the slow, gray conviction that you are alone, unloved, forgotten?</p>
+
+  <p>What would it do to sexual temptation — the lie that this small, secret pleasure is what your soul actually needs?</p>
+
+  <p>What would it do to your pride — the brittle structure you have built to convince yourself you are worth loving?</p>
+
+  <p>The Trinitarian salvation of Ephesians 1 does not whisper at these things. It thunders against them.</p>
+
+  <p>The Father has chosen you. The Son has redeemed you. The Spirit has sealed you.</p>
+
+  <p class="seam"><em>There is no seam.</em></p>
+
+  <p>And the same God who arranged this rescue with such breathtaking architecture does not now stand back to let you wander through life unattended. He is with you. He is for you. And He has given you Himself — every Person of Himself — as the inheritance for which you wait.</p>
+
+  <div class="gold-rule"></div>
+
+  <p class="closing">To the praise of His glorious grace.</p>
+
+  <div class="post-nav">
+    <a href="/blog">← Back to Blog</a>
+    <a href="https://apps.apple.com/app/id6760920054" target="_blank">Download the App →</a>
+  </div>
+</div>
+<div class="related">
+  <div class="related-inner">
+    <p class="related-label">Continue Reading</p>
+    <div class="related-grid">
+      <a class="related-card" href="emotions.html">
+        <p class="related-date">March 14, 2026</p>
+        <p class="related-title">Emotions in Biblical Counseling</p>
+      </a>
+      <a class="related-card" href="anger.html">
+        <p class="related-date">March 14, 2026</p>
+        <p class="related-title">Conquering Anger by GRACE</p>
+      </a>
+      <a class="related-card" href="social-media.html">
+        <p class="related-date">March 14, 2026</p>
+        <p class="related-title">Help! I'm Spending Too Much Time on Social Media!</p>
+      </a>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2026 The Kiln · Nashville, Tennessee</p>
+  <p style="margin-top: 8px;"><a href="/privacy">Privacy Policy</a> · <a href="mailto:support@thekiln.org">support@thekiln.org</a></p>
+</footer>
+</body>
+</html>
