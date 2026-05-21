@@ -1,0 +1,11 @@
+# Netlify custom headers
+
+# Universal Links: the AASA file has no extension and would otherwise
+# be served as application/octet-stream. Apple requires application/json.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+
+# Android App Links — keep consistent. Already JSON by extension, but
+# being explicit doesn't hurt.
+/.well-known/assetlinks.json
+  Content-Type: application/json

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "REPLACE_APPLE_TEAM_ID.com.jeffthekiln.GreatPhysician",
+        "paths": [
+          "/join/*"
+        ]
+      }
+    ]
+  }
+}
