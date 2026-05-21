@@ -1,7 +1,7 @@
 # deploy-library.ps1
-# Run from: D:\a_XTRA_STORAGE\a-COUNSELING\great-physician-website
+# Run from: D:\a_XTRA_STORAGE\a-COUNSELING\a-Great Physician\website
 
-$repo = "D:\a_XTRA_STORAGE\a-COUNSELING\great-physician-website"
+$repo = "D:\a_XTRA_STORAGE\a-COUNSELING\a-Great Physician\website"
 Set-Location $repo
 
 # Writing index.html
