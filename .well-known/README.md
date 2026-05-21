@@ -2,14 +2,14 @@
 
 These files let `https://thegreatphysician.ai/join/<token>` open the
 Great Physician app directly when a user with the app installed taps the
-link. They are served by Netlify at:
+link. They are served by Cloudflare Pages at:
 
 - https://thegreatphysician.ai/.well-known/apple-app-site-association
 - https://thegreatphysician.ai/.well-known/assetlinks.json
 
 The `_headers` file in the site root sets the correct
 `Content-Type: application/json` on the AASA file (which has no
-extension, so Netlify would otherwise serve it as octet-stream).
+extension, so Cloudflare would otherwise serve it as octet-stream).
 
 ## Placeholders to fill in before this works
 

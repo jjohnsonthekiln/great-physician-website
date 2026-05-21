@@ -1,4 +1,5 @@
-# Netlify custom headers
+# Cloudflare Pages custom headers
+# (Same _headers format Netlify uses — both honor this file.)
 
 # Universal Links: the AASA file has no extension and would otherwise
 # be served as application/octet-stream. Apple requires application/json.

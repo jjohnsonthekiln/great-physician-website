@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join a Study &mdash; Great Physician</title>
+  <meta name="description" content="You've been invited to a Great Physician inductive group study. Open the invitation in the app or download it free.">
+  <meta property="og:title" content="Join a Great Physician Study">
+  <meta property="og:description" content="You've been invited to walk through a Bible study together.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/great-physician-icon.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:     #faf8f4;
+      --surface:   #f0ebe0;
+      --border:    #e0d8cc;
+      --gold:      #c9a84c;
+      --gold-dark: #8b5e1a;
+      --text-dark: #2c1a0e;
+      --text-mid:  #7a6a58;
+      --deep:      #1e140a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header.bar {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+    }
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .card {
+      max-width: 480px;
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 44px 36px;
+      box-shadow: 0 4px 24px rgba(46, 26, 14, 0.06);
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .study-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--gold-dark);
+      margin: 8px 0 24px;
+      min-height: 1.6em;
+    }
+    .lede {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--border);
+      margin: 24px auto;
+    }
+
+    /* ── CTAs ── */
+    .open-app {
+      display: inline-block;
+      background: var(--deep);
+      color: #FAF6F0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .open-app:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(30, 20, 10, 0.18);
+    }
+
+    .secondary-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      margin: 26px 0 14px;
+    }
+    .badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge-app-store img { height: 44px; display: block; }
+    .badge-play-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      height: 44px;
+    }
+    .badge-play-store .sub { font-size: 0.65rem; opacity: 0.8; }
+    .badge-play-store .main { font-size: 0.95rem; font-weight: 600; }
+
+    .token-line {
+      margin-top: 28px;
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      word-break: break-all;
+    }
+    .error {
+      color: #b8302e;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 24px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-mid);
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--gold-dark); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="bar">
+    <a href="/" class="brand">Great Physician</a>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="eyebrow">Group Study Invitation</div>
+      <h1>You&rsquo;ve been invited to a study</h1>
+      <div id="study-title" class="study-title">&nbsp;</div>
+
+      <p class="lede" id="lede">
+        Great Physician is a free way to walk through a Bible study together &mdash;
+        passage, topic, or life issue &mdash; with a small group.
+      </p>
+
+      <a id="open-app" class="open-app" href="#">Open in Great Physician</a>
+
+      <div class="divider"></div>
+
+      <div class="secondary-label">Don&rsquo;t have the app?</div>
+      <div class="badges">
+        <a id="ios-link"
+           class="badge-app-store"
+           href="https://apps.apple.com/app/id6760920054"
+           target="_blank" rel="noopener">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
+               alt="Download on the App Store">
+        </a>
+        <a id="android-link"
+           class="badge-play-store"
+           href="https://play.google.com/store/apps/details?id=com.jeffthekiln.GreatPhysician"
+           target="_blank" rel="noopener">
+          <span>
+            <span class="sub">GET IT ON</span><br>
+            <span class="main">Google Play</span>
+          </span>
+        </a>
+      </div>
+
+      <div id="token-line" class="token-line"></div>
+    </section>
+  </main>
+
+  <footer>
+    The Kiln Ministries &middot; <a href="mailto:support@thekiln.org">support@thekiln.org</a>
+  </footer>
+
+  <script>
+    (function () {
+      // Extract token from /join/<token> path
+      const match = window.location.pathname.match(/^\/join\/([^/?#]+)/);
+      const token = match ? decodeURIComponent(match[1]) : null;
+
+      const titleEl   = document.getElementById('study-title');
+      const openBtn   = document.getElementById('open-app');
+      const tokenLine = document.getElementById('token-line');
+
+      if (!token) {
+        titleEl.innerHTML = '';
+        openBtn.style.display = 'none';
+        document.getElementById('lede').innerHTML =
+          '<span class="error">No invitation code found in this link.</span><br><br>' +
+          'Ask the study leader to share the link again.';
+        return;
+      }
+
+      // Wire the deep link. URL scheme is the most reliable cross-platform
+      // fallback when Universal Links don't fire (e.g., link pasted directly
+      // into a browser).
+      openBtn.href = 'greatphysician://join/' + encodeURIComponent(token);
+      tokenLine.textContent = 'Invitation code: ' + token;
+
+      // Try to fetch the study title for context. Soft-fail if the API
+      // is unreachable or returns nothing — the page still works.
+      const API = 'https://great-physician-production.up.railway.app';
+      fetch(API + '/api/study/' + encodeURIComponent(token))
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          if (data && data.title) {
+            titleEl.textContent = '“' + data.title + '”';
+          }
+        })
+        .catch(function () { /* leave empty */ });
+    })();
+  </script>
+
+</body>
+</html>
