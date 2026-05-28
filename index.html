@@ -74,6 +74,12 @@
     footer { padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); background: var(--surface); }
     footer p { font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.1em; line-height: 2; }
     footer a { color: var(--gold-dark); text-decoration: none; }
+    .lamp-mark { display: inline-block; background-color: var(--gold-dark); -webkit-mask: url('lamp.png') center / contain no-repeat; mask: url('lamp.png') center / contain no-repeat; }
+    .barnabas-card { max-width: 560px; margin: 60px auto 0; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 4px; padding: 56px 40px; text-align: center; }
+    .barnabas-card .lamp-mark { width: 120px; height: 90px; margin-bottom: 24px; }
+    .barnabas-card .feature-title { font-size: 1.8rem; margin-bottom: 6px; }
+    .barnabas-card .verse-ref { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
+    .barnabas-card .feature-body { font-size: 0.95rem; line-height: 1.85; max-width: 440px; margin: 0 auto; }
   </style>
 </head>
 <body>
@@ -85,8 +91,8 @@
 </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#sources">Sources</a></li>
-    <li><a href="#library-articles">Library</a></li>
+    <li><a href="#sources">Library</a></li>
+    <li><a href="#library-articles">Papers</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="#download">Download</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -100,7 +106,7 @@
     <img src="great-physician-icon.jpg" alt="Great Physician" style="width:140px; height:140px; border-radius:28px; box-shadow:0 8px 32px rgba(0,0,0,0.3); margin-bottom:32px;">
     <p class="hero-eyebrow">The Kiln Ministries Presents</p>
     <h1 class="hero-title">There is a Physician<br>who knows<br><em>every wound</em><br>of your heart.</h1>
-    <p class="hero-body">Great Physician is a biblical counseling app offering Scripture-saturated guidance through four AI companions &mdash; Barnabas, Lydia, Ethan, and Anna &mdash; trained in the nouthetic counseling tradition. Drawing on centuries of biblical wisdom and the rich heritage of Christ-centered soul care, each companion is equipped to meet you where you are &mdash; with discernment, compassion, and the truth that sets people free. Real hope. From God's Word.</p>
+    <p class="hero-body">Great Physician is a biblical counseling app offering Scripture-saturated guidance through Barnabas &mdash; an AI companion trained in the nouthetic counseling tradition. Drawing on centuries of biblical wisdom and the rich heritage of Christ-centered soul care, Barnabas is equipped to meet you where you are &mdash; with discernment, compassion, and the truth that sets people free. Real hope. From God's Word.</p>
     <div class="hero-cta">
       <a href="#download" class="btn-primary">Download</a>
       <a href="#about" class="btn-secondary">Learn More</a>
@@ -114,49 +120,29 @@
 </div>
 
 <section id="about">
-  <p class="section-label">Meet Your Counselors</p>
-  <h2 class="section-title">Choose the voice that<br>will guide you through God's Word.</h2>
+  <p class="section-label">Meet Barnabas</p>
+  <h2 class="section-title">A voice to guide you<br>through God's Word.</h2>
   <div class="divider"></div>
-  <p class="section-body">All four companions are grounded in Scripture and trained in the nouthetic counseling tradition. Each will speak the truth in love &mdash; and each will always point you to Jesus Christ, the Great Physician.</p>
-  <div class="features" style="margin-top: 40px;">
-    <div class="feature">
-      <img src="barnabas.png" alt="Barnabas" style="width:80px; height:80px; border-radius:50%; border:2px solid var(--gold); margin-bottom:20px;">
-      <div class="feature-title">Barnabas</div>
-      <p style="font-size:0.72rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">Acts 4:36</p>
-      <div class="feature-body">A son of encouragement. Barnabas walks alongside you with truth and grace from God's Word &mdash; warm, honest, and always pointing to Christ.</div>
-    </div>
-    <div class="feature">
-      <img src="ethan.png" alt="Ethan" style="width:80px; height:80px; border-radius:50%; border:2px solid var(--gold); margin-bottom:20px;">
-      <div class="feature-title">Ethan</div>
-      <p style="font-size:0.72rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">1 Kings 4:31 &middot; Psalm 89</p>
-      <div class="feature-body">A man of deep wisdom. Ethan anchors you in God's covenant faithfulness &mdash; steadfast, theologically rich, and rooted in the enduring promises of Scripture.</div>
-    </div>
-    <div class="feature">
-      <img src="lydia.png" alt="Lydia" style="width:80px; height:80px; border-radius:50%; border:2px solid var(--gold); margin-bottom:20px;">
-      <div class="feature-title">Lydia</div>
-      <p style="font-size:0.72rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">Acts 16:14</p>
-      <div class="feature-body">A woman of prayer and faith. Lydia listens with a caring heart, makes you feel deeply known, and gently leads you to the healing found in Jesus.</div>
-    </div>
-    <div class="feature">
-      <img src="anna.png" alt="Anna" style="width:80px; height:80px; border-radius:50%; border:2px solid var(--gold); margin-bottom:20px;">
-      <div class="feature-title">Anna</div>
-      <p style="font-size:0.72rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">Luke 2:36&ndash;38</p>
-      <div class="feature-body">A godly woman devoted to prayer and fasting. Anna helps you see Christ more clearly &mdash; turning your eyes from the circumstances of life to the Savior who redeems them.</div>
-    </div>
+  <p class="section-body">Barnabas is grounded in Scripture and trained in the nouthetic counseling tradition. He will speak the truth in love &mdash; and always point you to Jesus Christ, the Great Physician.</p>
+  <div class="barnabas-card">
+    <div class="lamp-mark"></div>
+    <div class="feature-title">Barnabas</div>
+    <p class="verse-ref">Acts 4:36</p>
+    <div class="feature-body">A son of encouragement. Barnabas walks alongside you with truth and grace from God's Word &mdash; warm, honest, and always pointing to Christ.</div>
   </div>
   <div class="features">
-    <div class="feature"><div class="feature-icon">&#10013;</div><div class="feature-title">Scripture-Saturated Counsel</div><div class="feature-body">Every response is grounded in God's Word. Your companion draws from a curated library of nouthetic counseling resources to speak to your specific situation.</div></div>
-    <div class="feature"><div class="feature-icon">&#128330;</div><div class="feature-title">Gospel-Centered</div><div class="feature-body">Jesus Christ is the Great Physician. All four companions always point you to Him &mdash; the only true healer of the human heart.</div></div>
-    <div class="feature"><div class="feature-icon">&#127925;</div><div class="feature-title">Music for the Soul</div><div class="feature-body">Your companion may recommend hymns and worship songs that speak to your situation &mdash; with links to listen immediately.</div></div>
-    <div class="feature"><div class="feature-icon">&#128197;</div><div class="feature-title">Human Counselor Access</div><div class="feature-body">When you need more, your companion connects you directly with a certified biblical counselor for personal, ongoing care.</div></div>
+    <div class="feature"><div class="feature-icon">&#10013;</div><div class="feature-title">Scripture-Saturated Counsel</div><div class="feature-body">Every response is grounded in God's Word. Barnabas draws from a curated library of nouthetic counseling resources to speak to your specific situation.</div></div>
+    <div class="feature"><div class="feature-icon">&#128330;</div><div class="feature-title">Gospel-Centered</div><div class="feature-body">Jesus Christ is the Great Physician. Barnabas always points you to Him &mdash; the only true healer of the human heart.</div></div>
+    <div class="feature"><div class="feature-icon">&#127925;</div><div class="feature-title">Music for the Soul</div><div class="feature-body">Barnabas may recommend hymns and worship songs that speak to your situation &mdash; with links to listen immediately.</div></div>
+    <div class="feature"><div class="feature-icon">&#128197;</div><div class="feature-title">Human Counselor Access</div><div class="feature-body">When you need more, Barnabas connects you directly with a certified biblical counselor for personal, ongoing care.</div></div>
   </div>
 </section>
 
 <section id="sources">
-  <p class="section-label">Our Library and Sources</p>
+  <p class="section-label">The Counselor Resource Library</p>
   <h2 class="section-title">Two thousand years<br>of Christian counsel.</h2>
   <div class="divider"></div>
-  <p class="section-body">Every counselor draws from Scripture and a curated library of historic Christian pastoral and theological writings &mdash; voices from the early church, the Reformation, the Puritans, and the great evangelical tradition that followed.</p>
+  <p class="section-body">Barnabas draws from Scripture and a curated library of historic Christian pastoral and theological writings &mdash; voices from the early church, the Reformation, the Puritans, and the great evangelical tradition that followed.</p>
   <div class="library-grid">
 
     <div class="library-card">
@@ -219,13 +205,23 @@
       </ul>
     </div>
 
+    <div class="library-card">
+      <h3 class="library-tradition">Modern Biblical Counseling</h3>
+      <ul class="library-list">
+        <li>Jay Adams &mdash; <em>Competent to Counsel</em></li>
+        <li>John Babler &amp; James MacDonald &mdash; <em>Christ-Centered Biblical Counseling</em></li>
+        <li>Paul Tripp &mdash; <em>Instruments in the Redeemer's Hands</em>; <em>What Did You Expect?</em>; <em>Broken-Down House</em></li>
+        <li>Ed Welch &mdash; <em>Depression: A Stubborn Darkness</em>; <em>Running Scared</em>; <em>Shame Interrupted</em>; <em>Addictions: A Banquet in the Grave</em></li>
+      </ul>
+    </div>
+
   </div>
-  <p class="library-closing">When you bring a question, your counselor draws from this library &mdash; the historic voice of the church speaking to your situation &mdash; and weaves it together with Scripture to point you to Christ, the Great Physician.</p>
+  <p class="library-closing">When you bring a question, Barnabas draws from this library &mdash; the historic voice of the church speaking to your situation &mdash; and weaves it together with Scripture to point you to Christ, the Great Physician.</p>
 </section>
 
 <section id="library-articles">
   <p class="section-label">Theology &amp; Ministry</p>
-  <h2 class="section-title">From the Library.</h2>
+  <h2 class="section-title">Theological Papers.</h2>
   <div class="divider"></div>
   <p class="section-body">Theological papers and longer-form articles exploring the biblical and doctrinal foundations of soul care &mdash; written for pastors, counselors, and thoughtful Christians.</p>
   <div class="blog-grid" style="margin-top: 60px;">
@@ -300,8 +296,11 @@
     <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 40px; text-align: center;">
       <img src="great-physician-icon.jpg" alt="Great Physician" style="width:88px; height:88px; border-radius:18px; margin-bottom:24px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
       <div class="feature-title" style="font-size:1.4rem; margin-bottom:10px;">Great Physician</div>
-      <p style="font-size:0.82rem; line-height:1.8; color:var(--text-mid); font-weight:300; margin-bottom:28px;">Scripture-saturated biblical counseling through four AI companions &mdash; Barnabas, Lydia, Ethan, and Anna &mdash; trained in the nouthetic tradition. Real hope. From God's Word.</p>
-      <a href="https://apps.apple.com/app/id6760920054" target="_blank"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" style="height:44px;"></a>
+      <p style="font-size:0.82rem; line-height:1.8; color:var(--text-mid); font-weight:300; margin-bottom:28px;">Scripture-saturated biblical counseling through Barnabas &mdash; an AI companion trained in the nouthetic tradition. Real hope. From God's Word.</p>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <a href="https://apps.apple.com/app/id6760920054" target="_blank"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" style="height:44px;"></a>
+        <a href="https://app.thegreatphysician.ai" target="_blank" class="btn-primary" style="font-size:0.75rem; padding:12px 28px;">Access the WebApp &rarr;</a>
+      </div>
     </div>
     <!-- Come to Me -->
     <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 40px; text-align: center;">
@@ -331,7 +330,7 @@
     <div style="background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 48px; border-radius: 4px;">
       <p class="section-label">A Note of Honesty</p>
       <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gold-dark); line-height: 1.7; margin-bottom: 16px;">Great Physician is not a replacement for your local church or pastor.</p>
-      <p style="font-size: 0.85rem; color: var(--text-mid); line-height: 1.8; font-weight: 300;">Barnabas, Lydia, Ethan, and Anna are tools to help you begin the journey toward biblical change. We will always encourage you to be part of a local congregation and to sit under faithful pastoral care. AI will never replace a physical local church and in-person counseling and discipleship.</p>
+      <p style="font-size: 0.85rem; color: var(--text-mid); line-height: 1.8; font-weight: 300;">Barnabas is a tool to help you begin the journey toward biblical change. We will always encourage you to be part of a local congregation and to sit under faithful pastoral care. AI will never replace a physical local church and in-person counseling and discipleship.</p>
     </div>
   </div>
 </section>
