@@ -75,11 +75,16 @@
     footer p { font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.1em; line-height: 2; }
     footer a { color: var(--gold-dark); text-decoration: none; }
     .lamp-mark { display: inline-block; background-color: var(--gold-dark); -webkit-mask: url('lamp.png') center / contain no-repeat; mask: url('lamp.png') center / contain no-repeat; }
-    .barnabas-card { max-width: 560px; margin: 60px auto 0; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 4px; padding: 56px 40px; text-align: center; }
-    .barnabas-card .lamp-mark { width: 120px; height: 90px; margin-bottom: 24px; }
-    .barnabas-card .feature-title { font-size: 1.8rem; margin-bottom: 6px; }
-    .barnabas-card .verse-ref { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
-    .barnabas-card .feature-body { font-size: 0.95rem; line-height: 1.85; max-width: 440px; margin: 0 auto; }
+    .barnabas-card { max-width: 640px; margin: 40px auto 0; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 4px; padding: 28px 32px; text-align: left; display: flex; align-items: center; gap: 28px; }
+    .barnabas-card .lamp-mark { width: 72px; height: 54px; margin-bottom: 0; flex-shrink: 0; }
+    .barnabas-card .barnabas-text { flex: 1; min-width: 0; }
+    .barnabas-card .feature-title { font-size: 1.5rem; margin-bottom: 2px; }
+    .barnabas-card .verse-ref { font-size: 0.7rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .barnabas-card .feature-body { font-size: 0.9rem; line-height: 1.7; max-width: none; margin: 0; }
+    @media (max-width: 600px) {
+      .barnabas-card { flex-direction: column; text-align: center; gap: 14px; padding: 28px 24px; }
+      .barnabas-card .lamp-mark { width: 80px; height: 60px; }
+    }
   </style>
 </head>
 <body>
@@ -127,9 +132,11 @@
   <p class="section-body">Barnabas is grounded in Scripture and trained in the nouthetic counseling tradition. He will speak the truth in love &mdash; and always point you to Jesus Christ, the Great Physician.</p>
   <div class="barnabas-card">
     <div class="lamp-mark"></div>
-    <div class="feature-title">Barnabas</div>
-    <p class="verse-ref">Acts 4:36</p>
-    <div class="feature-body">A son of encouragement. Barnabas walks alongside you with truth and grace from God's Word &mdash; warm, honest, and always pointing to Christ.</div>
+    <div class="barnabas-text">
+      <div class="feature-title">Barnabas</div>
+      <p class="verse-ref">Acts 4:36</p>
+      <div class="feature-body">A son of encouragement. Barnabas walks alongside you with truth and grace from God's Word &mdash; warm, honest, and always pointing to Christ.</div>
+    </div>
   </div>
   <div class="features">
     <div class="feature"><div class="feature-icon">&#10013;</div><div class="feature-title">Scripture-Saturated Counsel</div><div class="feature-body">Every response is grounded in God's Word. Barnabas draws from a curated library of nouthetic counseling resources to speak to your specific situation.</div></div>
