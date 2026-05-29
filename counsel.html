@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Counselor Signup — Great Physician</title>
+  <title>The Counselor Tier — Great Physician</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -325,6 +325,110 @@
       text-decoration: none;
     }
     footer a:hover { color: var(--gold-dark); }
+
+    /* ── Features list ── */
+    .feature {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature:last-child { border-bottom: none; }
+    .feature-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Pricing ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 8px 0 18px;
+    }
+    @media (max-width: 520px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+    .pricing-option {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      background: var(--bg);
+    }
+    .pricing-option.featured {
+      border-color: var(--gold);
+      background: var(--gold-light);
+    }
+    .pricing-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pricing-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .pricing-note {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+    .pricing-trial {
+      font-size: 11px;
+      color: var(--text-mid);
+      text-align: center;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    /* ── CTA section ── */
+    .cta-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      text-align: center;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 94, 26, 0.25);
+    }
+    .cta-hint {
+      font-size: 11px;
+      color: var(--text-mid);
+      margin-top: 14px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -342,189 +446,85 @@
 
   <!-- Hero -->
   <div class="hero">
-    <p class="hero-eyebrow">Biblical Counsel for Your Soul</p>
-    <h1 class="hero-title">Join as a Counselor</h1>
+    <p class="hero-eyebrow">For Biblical Counselors</p>
+    <h1 class="hero-title">The Counselor Tier</h1>
     <div class="hero-divider"></div>
     <p class="hero-sub">
-      "The heartfelt counsel of a friend is as sweet as perfume and incense."
+      "As iron sharpens iron, so one person sharpens another."
     </p>
     <p class="hero-body">
-      Great Physician connects those seeking biblical guidance with trained, Christ-centered counselors.
-      If God has equipped you to walk alongside others through His Word, we'd be honored to have you join our community.
+      Digital tools for biblical counselors &mdash; research, session documentation,
+      and Scripture-saturated resources to support the work God has already called
+      you to.
     </p>
   </div>
 
   <!-- Scripture -->
   <div class="scripture-banner">
-    <p class="scripture-text">"He heals the brokenhearted and binds up their wounds."</p>
-    <p class="scripture-ref">Psalm 147:3</p>
+    <p class="scripture-text">"Where there is no guidance, a people falls, but in an abundance of counselors there is safety."</p>
+    <p class="scripture-ref">Proverbs 11:14</p>
   </div>
 
-  <!-- Form -->
+  <!-- Features -->
   <div class="form-wrap">
     <div class="form-card">
 
-      <!-- Success message (shown after submit) -->
-      <div class="success-msg" id="successMsg">
-        <div class="success-icon">✝️</div>
-        <h2 class="success-title">Application Received</h2>
-        <p class="success-body">
-          Thank you for your willingness to serve. We will review your application
-          prayerfully and be in touch with you soon.
-        </p>
+      <p class="form-section-label">What's Included</p>
+
+      <div class="feature">
+        <p class="feature-name">Session Documentation</p>
+        <p class="feature-desc">AI-drafted case report forms from your session transcripts (Q3&ndash;Q16 of the ACBC form), with side-by-side review, supporting-quote highlighting, and a running .docx export you can share with your supervisor.</p>
       </div>
 
-      <!-- The form -->
-      <form id="counselorForm"
-            action="https://formspree.io/f/mojpvlzb"
-            method="POST">
+      <div class="feature">
+        <p class="feature-name">Research Assistant</p>
+        <p class="feature-desc">Ask theological questions, work through cases, or study a passage in depth. Draws from a curated library of biblical counseling resources, Reformed pastoral writings, and the historic Christian tradition.</p>
+      </div>
 
-        <!-- Section 1: Contact -->
-        <p class="form-section-label">Contact Information</p>
+      <div class="feature">
+        <p class="feature-name">Hymns &amp; Worship</p>
+        <p class="feature-desc">Songs paired to counseling themes &mdash; anxiety, grief, repentance, identity, and more. Recommendations open straight to a YouTube search.</p>
+      </div>
 
-        <div class="form-row">
-          <div class="field">
-            <label for="firstName">First Name <span class="req">*</span></label>
-            <input type="text" id="firstName" name="firstName" placeholder="John" required />
-          </div>
-          <div class="field">
-            <label for="lastName">Last Name <span class="req">*</span></label>
-            <input type="text" id="lastName" name="lastName" placeholder="Calvin" required />
-          </div>
-        </div>
+      <div class="feature">
+        <p class="feature-name">Inductive Group Study</p>
+        <p class="feature-desc">Create AI-generated inductive Bible studies on any passage, topic, or life issue. Invite others via share link and review their responses together.</p>
+      </div>
 
-        <div class="field">
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-        </div>
-
-        <div class="field">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
-        </div>
-
-        <!-- Section 2: Ministry -->
-        <div class="section-gap">
-          <p class="form-section-label">Church &amp; Ministry</p>
-        </div>
-
-        <div class="field">
-          <label for="church">Church Name <span class="req">*</span></label>
-          <input type="text" id="church" name="church" placeholder="Grace Community Church" required />
-        </div>
-
-        <div class="form-row">
-          <div class="field">
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" placeholder="Jackson" />
-          </div>
-          <div class="field">
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" placeholder="TN" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="role">Your Role in Ministry</label>
-          <select id="role" name="role">
-            <option value="" disabled selected>Select your role…</option>
-            <option>Pastor / Elder</option>
-            <option>Biblical Counselor</option>
-            <option>Deacon / Ministry Leader</option>
-            <option>Lay Counselor</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <!-- Section 3: Credentials -->
-        <div class="section-gap">
-          <p class="form-section-label">Counseling Training &amp; Credentials</p>
-        </div>
-
-        <div class="field">
-          <label for="training">Training &amp; Certifications</label>
-          <input type="text" id="training" name="training" placeholder="e.g. ACBC certified, CCEF coursework, seminary training…" />
-          <p class="hint">List any relevant biblical counseling certifications, training programs, or seminary coursework.</p>
-        </div>
-
-        <div class="field">
-          <label for="experience">Years of Counseling Experience</label>
-          <select id="experience" name="experience">
-            <option value="" disabled selected>Select…</option>
-            <option>Less than 1 year</option>
-            <option>1–3 years</option>
-            <option>3–5 years</option>
-            <option>5–10 years</option>
-            <option>10+ years</option>
-          </select>
-        </div>
-
-        <!-- Section 4: Statement -->
-        <div class="section-gap">
-          <p class="form-section-label">Personal Statement</p>
-        </div>
-
-        <div class="field">
-          <label for="statement">Why do you want to counsel with Great Physician? <span class="req">*</span></label>
-          <textarea id="statement" name="statement" placeholder="Share briefly what motivates you to offer biblical counsel, your approach to Scripture-centered care, and what you hope to bring to those who are hurting…" required></textarea>
-          <p class="hint">200–400 words is ideal.</p>
-        </div>
-
-        <!-- Agreement -->
-        <div class="checkbox-field">
-          <input type="checkbox" id="agree" name="agree" required />
-          <span>
-            I affirm that my counsel will be grounded in Scripture and consistent with the
-            historic Christian faith. I have read and agree to the
-            <a href="/counselor-guidelines.html">Counselor Guidelines</a>.
-          </span>
-        </div>
-
-        <button type="submit" class="submit-btn" id="submitBtn">
-          Submit Application
-        </button>
-
-      </form>
     </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="form-wrap" style="padding-top: 0;">
+    <div class="form-card">
+      <p class="form-section-label">Pricing</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-option featured">
+          <p class="pricing-label">Annual</p>
+          <p class="pricing-amount">$89/year</p>
+          <p class="pricing-note">Save 25%</p>
+        </div>
+        <div class="pricing-option">
+          <p class="pricing-label">Monthly</p>
+          <p class="pricing-amount">$9.95/month</p>
+        </div>
+      </div>
+
+      <p class="pricing-trial">14-day free trial &middot; Cancel anytime</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a href="https://app.thegreatphysician.ai" class="cta-btn">Open the Counselor Tier &rarr;</a>
+    <p class="cta-hint">You'll create or sign in to your Counselor account in the app.</p>
   </div>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 Great Physician &nbsp;·&nbsp; <a href="/">thegreatphysician.ai</a>
   </footer>
-
-  <script>
-    const form = document.getElementById('counselorForm');
-    const btn  = document.getElementById('submitBtn');
-    const msg  = document.getElementById('successMsg');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = 'Submitting…';
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          msg.classList.add('visible');
-        } else {
-          btn.disabled = false;
-          btn.textContent = 'Submit Application';
-          alert('Something went wrong. Please try again or email us directly.');
-        }
-      } catch {
-        btn.disabled = false;
-        btn.textContent = 'Submit Application';
-        alert('Network error. Please check your connection and try again.');
-      }
-    });
-  </script>
 
 </body>
 </html>
