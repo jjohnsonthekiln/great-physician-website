@@ -323,11 +323,22 @@
   <h2 class="section-title">The free side stays free.<br>With your help.</h2>
   <div class="donate-block">
     <p>Barnabas, Chain Reference, and Live Help will always be free for anyone who needs them. Your gifts &mdash; and Counselor subscriptions from biblical counselors &mdash; are what keep them that way. If this app has helped you, would you consider giving to keep it free for the next person?</p>
-    <div id="paypal-container-3973ZA9MPST3G" style="max-width: 400px; margin: 0 auto;"></div>
+    <div id="paypal-container-4UJ8YJENWPJPN" style="max-width: 400px; margin: 0 auto;"></div>
     <script>
+      // The `style` prop is not documented as accepted by HostedButtons (it's
+      // documented for paypal.Buttons / Smart Payment Buttons), but we pass
+      // it here as a Hail Mary — if PayPal honors it we get a gold button
+      // that matches the site palette; if not it's silently ignored and we
+      // get the standard PayPal-blue Hosted Button.
       paypal.HostedButtons({
-        hostedButtonId: "3973ZA9MPST3G",
-      }).render("#paypal-container-3973ZA9MPST3G");
+        hostedButtonId: "4UJ8YJENWPJPN",
+        style: {
+          color:  'gold',
+          shape:  'rect',
+          label:  'donate',
+          layout: 'vertical',
+        },
+      }).render("#paypal-container-4UJ8YJENWPJPN");
     </script>
   </div>
 </section>
