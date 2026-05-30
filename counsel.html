@@ -4,527 +4,138 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Counselor Tier — Great Physician</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="A subscription for biblical counselors: AI-assisted case-report drafting (Whetstone), a theological research assistant, and spiritual-growth tracking across your counselees." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #faf8f4;
-      --surface:   #f0ebe0;
-      --border:    #e0d8cc;
-      --text-dark: #2c1a0e;
-      --text-mid:  #7a6a58;
-      --text-light:#b0a090;
-      --gold:      #c9a84c;
-      --gold-dark: #8b5e1a;
-      --gold-light:#f0e6cc;
+      --bg: #faf8f4; --surface: #f0ebe0; --border: #e0d8cc;
+      --text-dark: #2c1a0e; --text-mid: #7a6a58; --gold: #c9a84c; --gold-dark: #8b5e1a;
     }
-
-    body {
-      background: var(--bg);
-      color: var(--text-dark);
-      font-family: 'Montserrat', sans-serif;
-      min-height: 100vh;
-    }
-
-    /* ── Nav ── */
-    nav {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--gold-dark);
-      text-decoration: none;
-      letter-spacing: 0.3px;
-    }
-    .nav-back {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-mid);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--gold-dark); }
-    .nav-back svg { width: 14px; height: 14px; }
-
-    /* ── Hero ── */
-    .hero {
-      text-align: center;
-      padding: 64px 24px 48px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 6vw, 52px);
-      font-weight: 600;
-      color: var(--gold-dark);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .hero-divider {
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 24px;
-    }
-    .hero-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-    .hero-body {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.8;
-    }
-
-    /* ── Scripture banner ── */
-    .scripture-banner {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 24px;
-      text-align: center;
-      margin-bottom: 56px;
-    }
-    .scripture-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-style: italic;
-      color: var(--text-mid);
-      margin-bottom: 6px;
-    }
-    .scripture-ref {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    /* ── Form card ── */
-    .form-wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    .form-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 48px;
-      box-shadow: 0 4px 24px rgba(44,26,14,0.06);
-    }
-
-    .form-section-label {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 520px) {
-      .form-row { grid-template-columns: 1fr; }
-      .form-card { padding: 32px 24px; }
-    }
-
-    .field {
-      margin-bottom: 22px;
-    }
-    .field label {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-    .field label .req {
-      color: var(--gold);
-      margin-left: 2px;
-    }
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 12px 14px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text-dark);
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      appearance: none;
-    }
-    .field input::placeholder,
-    .field textarea::placeholder {
-      color: var(--text-light);
-      font-weight: 300;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-    }
-    .field textarea {
-      resize: vertical;
-      min-height: 110px;
-      line-height: 1.6;
-    }
-    .field select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6a58' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      padding-right: 36px;
-      cursor: pointer;
-    }
-    .field .hint {
-      font-size: 10px;
-      font-weight: 300;
-      color: var(--text-light);
-      margin-top: 5px;
-      line-height: 1.5;
-    }
-
-    .section-gap {
-      margin-top: 32px;
-    }
-
-    /* ── Checkbox ── */
-    .checkbox-field {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .checkbox-field input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      min-width: 16px;
-      margin-top: 2px;
-      accent-color: var(--gold-dark);
-      cursor: pointer;
-    }
-    .checkbox-field span {
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.6;
-    }
-    .checkbox-field span a {
-      color: var(--gold-dark);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    /* ── Submit button ── */
-    .submit-btn {
-      width: 100%;
-      background: var(--gold-dark);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 16px 24px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .submit-btn:hover { background: #7a5216; }
-    .submit-btn:active { transform: scale(0.99); }
-    .submit-btn:disabled {
-      background: var(--text-light);
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* ── Success state ── */
-    .success-msg {
-      display: none;
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .success-msg.visible { display: block; }
-    .success-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .success-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--gold-dark);
-      margin-bottom: 12px;
-    }
-    .success-body {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.8;
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 24px 32px;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 300;
-      color: var(--text-light);
-      letter-spacing: 0.3px;
-    }
-    footer a {
-      color: var(--text-mid);
-      text-decoration: none;
-    }
-    footer a:hover { color: var(--gold-dark); }
-
-    /* ── Features list ── */
-    .feature {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .feature:last-child { border-bottom: none; }
-    .feature-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-    }
-    .feature-desc {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Pricing ── */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 8px 0 18px;
-    }
-    @media (max-width: 520px) {
-      .pricing-grid { grid-template-columns: 1fr; }
-    }
-    .pricing-option {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      background: var(--bg);
-    }
-    .pricing-option.featured {
-      border-color: var(--gold);
-      background: var(--gold-light);
-    }
-    .pricing-label {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      color: var(--gold-dark);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .pricing-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-    .pricing-note {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      color: var(--gold-dark);
-      text-transform: uppercase;
-    }
-    .pricing-trial {
-      font-size: 11px;
-      color: var(--text-mid);
-      text-align: center;
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    /* ── CTA section ── */
-    .cta-wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-      text-align: center;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 18px 44px;
-      border-radius: 6px;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .cta-btn:hover {
-      background: var(--gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(139, 94, 26, 0.25);
-    }
-    .cta-hint {
-      font-size: 11px;
-      color: var(--text-mid);
-      margin-top: 14px;
-      font-style: italic;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.6; }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); text-decoration: none; }
+    .nav a.back { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav a.back:hover { color: var(--gold-dark); }
+    .hero { text-align: center; padding: 70px 0 40px; }
+    .eyebrow { font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dark); font-weight: 600; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; margin-top: 10px; }
+    .hero p { font-size: 1.05rem; color: var(--text-mid); max-width: 620px; margin: 18px auto 0; font-weight: 300; }
+    .section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; margin-bottom: 8px; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 24px; }
+    .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+    .feature h3 { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .feature p { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; }
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 28px; }
+    .plan { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 28px; text-align: center; }
+    .plan.featured { border-color: var(--gold-dark); border-width: 2px; }
+    .plan .badge { display: inline-block; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--gold-dark); padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
+    .plan .price { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--text-dark); }
+    .plan .per { font-size: 0.95rem; color: var(--text-mid); }
+    .plan .note { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; margin-top: 8px; }
+    .btn { display: inline-block; background: var(--gold-dark); color: #fff; padding: 13px 30px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 0.95rem; margin-top: 18px; }
+    .btn.secondary { background: #fff; color: var(--gold-dark); border: 1px solid var(--gold-dark); }
+    .trial-line { text-align: center; color: var(--text-mid); font-weight: 300; margin-top: 22px; font-size: 0.95rem; }
+    .fine { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; margin-top: 14px; max-width: 680px; }
+    footer { background: var(--surface); padding: 36px 0; text-align: center; border-top: 1px solid var(--border); margin-top: 40px; }
+    footer p { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; margin: 4px 0; }
+    footer a { color: var(--gold-dark); text-decoration: none; }
   </style>
 </head>
 <body>
-
-  <!-- Nav -->
-  <nav>
-    <a href="/" class="nav-brand">Great Physician</a>
-    <a href="/" class="nav-back">
-      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.5 2.5L4 7l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Back to Home
-    </a>
-  </nav>
-
-  <!-- Hero -->
-  <div class="hero">
-    <p class="hero-eyebrow">For Biblical Counselors</p>
-    <h1 class="hero-title">The Counselor Tier</h1>
-    <div class="hero-divider"></div>
-    <p class="hero-sub">
-      "As iron sharpens iron, so one person sharpens another."
-    </p>
-    <p class="hero-body">
-      Digital tools for biblical counselors &mdash; research, session documentation,
-      and Scripture-saturated resources to support the work God has already called
-      you to.
-    </p>
-  </div>
-
-  <!-- Scripture -->
-  <div class="scripture-banner">
-    <p class="scripture-text">"Where there is no guidance, a people falls, but in an abundance of counselors there is safety."</p>
-    <p class="scripture-ref">Proverbs 11:14</p>
-  </div>
-
-  <!-- Features -->
-  <div class="form-wrap">
-    <div class="form-card">
-
-      <p class="form-section-label">What's Included</p>
-
-      <div class="feature">
-        <p class="feature-name">Session Documentation</p>
-        <p class="feature-desc">AI-drafted case report forms from your session transcripts (Q3&ndash;Q16 of the ACBC form), with side-by-side review, supporting-quote highlighting, and a running .docx export you can share with your supervisor.</p>
-      </div>
-
-      <div class="feature">
-        <p class="feature-name">Research Assistant</p>
-        <p class="feature-desc">Ask theological questions, work through cases, or study a passage in depth. Draws from a curated library of biblical counseling resources, Reformed pastoral writings, and the historic Christian tradition.</p>
-      </div>
-
-      <div class="feature">
-        <p class="feature-name">Hymns &amp; Worship</p>
-        <p class="feature-desc">Songs paired to counseling themes &mdash; anxiety, grief, repentance, identity, and more. Recommendations open straight to a YouTube search.</p>
-      </div>
-
-      <div class="feature">
-        <p class="feature-name">Inductive Group Study</p>
-        <p class="feature-desc">Create AI-generated inductive Bible studies on any passage, topic, or life issue. Invite others via share link and review their responses together.</p>
-      </div>
-
+  <header>
+    <div class="container nav">
+      <a class="logo" href="/">Great Physician</a>
+      <a class="back" href="/">&larr; Back to home</a>
     </div>
-  </div>
+  </header>
 
-  <!-- Pricing -->
-  <div class="form-wrap" style="padding-top: 0;">
-    <div class="form-card">
-      <p class="form-section-label">Pricing</p>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">For Biblical Counselors</div>
+      <h1>The Counselor Tier</h1>
+      <p>
+        The Great Physician app is free for anyone seeking biblical counsel. The
+        <strong>Counselor Tier</strong> is a paid professional subscription that gives
+        practicing biblical counselors a set of tools to document, draft, and track
+        their counseling work.
+      </p>
+    </section>
 
-      <div class="pricing-grid">
-        <div class="pricing-option featured">
-          <p class="pricing-label">Annual</p>
-          <p class="pricing-amount">$89/year</p>
-          <p class="pricing-note">Save 25%</p>
+    <section class="section">
+      <h2>What's included</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Whetstone</h3>
+          <p>Paste a session transcript and get an AI-assisted draft of an ACBC-style case report, field by field, that you review, edit, and finalize.</p>
         </div>
-        <div class="pricing-option">
-          <p class="pricing-label">Monthly</p>
-          <p class="pricing-amount">$9.95/month</p>
+        <div class="feature">
+          <h3>Research Assistant</h3>
+          <p>Ask theological and case questions across a curated library of the nouthetic and biblical-counseling tradition.</p>
+        </div>
+        <div class="feature">
+          <h3>Spiritual Growth Tracking</h3>
+          <p>Score each session across three axes — Christ's sufficiency, love of neighbor, and God's glory — and chart a counselee's growth over time.</p>
+        </div>
+        <div class="feature">
+          <h3>Counselee &amp; Session Records</h3>
+          <p>Keep counselee profiles, session notes, and assign homework — organized in one place, privacy-minded by design.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Pricing</h2>
+      <p class="fine">Choose a plan below. Every plan starts with a 14-day free trial — you won't be charged until the trial ends, and you can cancel anytime.</p>
+
+      <div class="plans">
+        <div class="plan featured">
+          <div class="badge">Save 25%</div>
+          <div class="price">$89</div>
+          <div class="per">per year</div>
+          <div class="note">Billed annually after a 14-day free trial</div>
+          <!-- TODO: once Paddle is approved, point this at the Paddle annual checkout link -->
+          <a class="btn" href="https://app.thegreatphysician.ai">Start free trial</a>
+        </div>
+        <div class="plan">
+          <div class="price">$9.95</div>
+          <div class="per">per month</div>
+          <div class="note">Billed monthly after a 14-day free trial</div>
+          <!-- TODO: once Paddle is approved, point this at the Paddle monthly checkout link -->
+          <a class="btn secondary" href="https://app.thegreatphysician.ai">Start free trial</a>
         </div>
       </div>
 
-      <p class="pricing-trial">14-day free trial &middot; Cancel anytime</p>
-    </div>
-  </div>
+      <p class="trial-line">14-day free trial · Cancel anytime · Secure checkout</p>
 
-  <!-- CTA -->
-  <div class="cta-wrap">
-    <a href="https://app.thegreatphysician.ai" class="cta-btn">Open the Counselor Tier &rarr;</a>
-    <p class="cta-hint">You'll create or sign in to your Counselor account in the app.</p>
-  </div>
+      <p class="fine">
+        Subscriptions renew automatically at the price above until cancelled. You can
+        cancel at any time and keep access until the end of your current billing period.
+        See our <a href="/refund.html">Refunds &amp; Cancellation policy</a> and
+        <a href="/terms.html">Terms of Service</a> for details. Payments and billing are
+        handled by our authorized reseller and merchant of record.
+      </p>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Great Physician &nbsp;·&nbsp; <a href="/">thegreatphysician.ai</a>
+    <div class="container">
+      <p>Great Physician — a ministry of The Kiln Ministries</p>
+      <p>
+        <a href="/counsel.html">Counselor Tier</a> ·
+        <a href="/terms.html">Terms of Service</a> ·
+        <a href="/refund.html">Refunds &amp; Cancellation</a> ·
+        <a href="https://great-physician-production.up.railway.app/privacy">Privacy Policy</a>
+      </p>
+      <p>Questions? <a href="mailto:jeff@gurudiscovery.com">jeff@gurudiscovery.com</a></p>
+    </div>
   </footer>
-
 </body>
 </html>
