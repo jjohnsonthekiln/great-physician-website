@@ -209,15 +209,6 @@
           <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
                alt="Download on the App Store">
         </a>
-        <a id="android-link"
-           class="badge-play-store"
-           href="https://play.google.com/store/apps/details?id=com.jeffthekiln.GreatPhysician"
-           target="_blank" rel="noopener">
-          <span>
-            <span class="sub">GET IT ON</span><br>
-            <span class="main">Google Play</span>
-          </span>
-        </a>
       </div>
 
       <div id="token-line" class="token-line"></div>
@@ -252,10 +243,11 @@
         return;
       }
 
-      // Wire the deep link. URL scheme is the most reliable cross-platform
-      // fallback when Universal Links don't fire (e.g., link pasted directly
-      // into a browser).
-      openBtn.href = 'greatphysician://join/' + encodeURIComponent(token);
+      // Open the invitation in the Great Physician web app, which handles the
+      // /join/<token> route and works on any device/browser (no native app or
+      // Universal Link setup required). The web app hands off to the native
+      // app via its own deep links once those are configured.
+      openBtn.href = 'https://app.thegreatphysician.ai/join/' + encodeURIComponent(token);
       tokenLine.textContent = 'Invitation code: ' + token;
 
       // Try to fetch the study title for context. Soft-fail if the API
