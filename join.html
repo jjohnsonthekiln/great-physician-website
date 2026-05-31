@@ -230,9 +230,14 @@
 
   <script>
     (function () {
-      // Extract token from /join/<token> path
-      const match = window.location.pathname.match(/^\/join\/([^/?#]+)/);
-      const token = match ? decodeURIComponent(match[1]) : null;
+      // Read the invitation token from the ?token= / ?code= query string
+      // (primary), falling back to a /join/<token> path for older links.
+      // The query form is canonical because Cloudflare Pages 307-redirects
+      // /join/<token> to /join, stripping the token before this runs.
+      const params    = new URLSearchParams(window.location.search);
+      const pathMatch = window.location.pathname.match(/^\/join\/([^/?#]+)/);
+      const token = params.get('token') || params.get('code')
+        || (pathMatch ? decodeURIComponent(pathMatch[1]) : null);
 
       const titleEl   = document.getElementById('study-title');
       const openBtn   = document.getElementById('open-app');
