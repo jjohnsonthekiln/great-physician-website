@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Great Physician &mdash; A Biblical Guide for Your Soul</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://www.paypal.com/sdk/js?client-id=BAA3YKxGNKKE_VvtPuGUCFnlPFu-L8YO6edcnWXIDcm3fjw4asPVAEfjKxk9LoCzYMK74yRj6AJ8K7yVUc&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
   <style>
     :root { --cream: #faf8f4; --surface: #f0ebe0; --border: #e0d8cc; --gold: #c9a84c; --gold-dark: #8b5e1a; --burgundy: #722f37; --text-dark: #2c1a0e; --text-mid: #7a6a58; --navy: #1e3a5f; --navy-dark: #0d1b2e; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -330,23 +329,14 @@
   <h2 class="section-title">The free side stays free.<br>With your help.</h2>
   <div class="donate-block">
     <p>Barnabas, Chain Reference, and Live Help will always be free for anyone who needs them. Your gifts &mdash; and Counselor subscriptions from biblical counselors &mdash; are what keep them that way. If this app has helped you, would you consider giving to keep it free for the next person?</p>
-    <div id="paypal-container-4UJ8YJENWPJPN" style="max-width: 400px; margin: 0 auto;"></div>
-    <script>
-      // The `style` prop is not documented as accepted by HostedButtons (it's
-      // documented for paypal.Buttons / Smart Payment Buttons), but we pass
-      // it here as a Hail Mary — if PayPal honors it we get a gold button
-      // that matches the site palette; if not it's silently ignored and we
-      // get the standard PayPal-blue Hosted Button.
-      paypal.HostedButtons({
-        hostedButtonId: "4UJ8YJENWPJPN",
-        style: {
-          color:  'gold',
-          shape:  'rect',
-          label:  'donate',
-          layout: 'vertical',
-        },
-      }).render("#paypal-container-4UJ8YJENWPJPN");
-    </script>
+    <!-- DonorBox embedded donation form (Stripe-backed). Monthly is preselected
+         to encourage recurring gifts; donors can switch to one-time. -->
+    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+    <iframe src="https://donorbox.org/embed/great-physician?default_interval=m"
+            name="donorbox" allow="payment" seamless frameborder="0" scrolling="no"
+            height="900px" width="100%"
+            style="max-width:500px; min-width:250px; max-height:none!important; margin:0 auto; display:block;">
+    </iframe>
   </div>
 </section>
 
