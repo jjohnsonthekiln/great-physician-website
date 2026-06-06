@@ -44,6 +44,7 @@
     .post-body p { font-size: 0.95rem; line-height: 1.95; color: var(--text-mid); font-weight: 300; margin-bottom: 24px; }
     .post-body p strong { color: var(--text-dark); font-weight: 500; }
     .post-body p em { font-style: italic; }
+    .post-body p a { color: var(--gold-dark); text-decoration: underline; }
     .post-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--text-dark); margin: 40px 0 16px; }
     .post-body h3 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; color: var(--gold-dark); text-transform: uppercase; margin: 32px 0 12px; }
 
@@ -132,6 +133,8 @@
   // Inline markdown for paragraphs: **bold**, *italic*
   function inlineMarkdown(text) {
     // text is already HTML-escaped; we only operate on the escaped form
+    // [label](url) -> link
+    text = text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
     text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     text = text.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
     return text;
