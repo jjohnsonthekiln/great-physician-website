@@ -80,6 +80,13 @@
     .store-btn-name { font-size: 1rem; font-weight: 500; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     @media (max-width: 768px) {
+      /* Anchor hero content to the top on small screens so the stacked CTA
+         buttons don't drop into the middle and cover the lamp/flame. The lamp
+         then glows in a clear band at the bottom of the hero. */
+      .hero { align-items: flex-start; min-height: 116vh; padding-top: 104px; padding-bottom: 6vh; }
+      .hero .brand-lockup { margin-bottom: 22px; }
+      .hero .hero-title { margin-bottom: 18px; }
+      .hero .hero-body { margin-bottom: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       nav { padding: 16px 20px; }
       .nav-toggle { display: flex; }
