@@ -1,0 +1,15 @@
+{
+  // Cloudflare Worker that serves this static site. The Worker name MUST match
+  // the existing Worker bound to thegreatphysician.ai ("great-physician-website")
+  // so `wrangler deploy` updates that same Worker (and keeps the domain route)
+  // rather than creating a new one.
+  //
+  // This is a static, assets-only Worker: no `main` script, just the HTML/CSS/
+  // images in the repo root served directly. `_headers` and `_redirects` in the
+  // root are honored by Workers Static Assets.
+  "name": "great-physician-website",
+  "compatibility_date": "2026-04-07",
+  "assets": {
+    "directory": "."
+  }
+}

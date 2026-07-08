@@ -1,0 +1,7 @@
+.git
+.gitignore
+node_modules
+wrangler.jsonc
+.assetsignore
+_pgbackup
+_pginfo
