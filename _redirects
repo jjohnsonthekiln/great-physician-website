@@ -11,8 +11,8 @@
 /posts/emotions.html          /post.html?slug=emotions-in-biblical-counseling 301
 /posts/there-is-no-seam.html  /post.html?slug=there-is-no-seam                301
 
-# Pricing alias — Paddle and other reviewers look for a /pricing URL.
-# Serve the Counselor Tier page (counsel.html) at /pricing too.
+# Pricing alias — payment processors and other reviewers look for a /pricing URL.
+# Serve the Great Physician Pro page (counsel.html) at /pricing too.
 /pricing                      /counsel.html                                   200
 
 # Inductive Group Study invitations — rewrite (200) keeps the URL bar
