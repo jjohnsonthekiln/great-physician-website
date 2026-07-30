@@ -336,11 +336,22 @@
         source: new URLSearchParams(window.location.search).get('src') || 'web'
       })
     })
+      // Read as text first and parse by hand. An Express 404 (or any proxy
+      // error) replies with HTML, and res.json() would throw on it — which
+      // lands in .catch() and mislabels a live server as unreachable.
       .then(function (res) {
-        return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+        return res.text().then(function (body) {
+          var data = null;
+          try { data = JSON.parse(body); } catch (e) { /* not JSON */ }
+          return { ok: res.ok, status: res.status, data: data };
+        });
       })
       .then(function (r) {
-        if (!r.ok) return fail((r.data && r.data.error) || 'Something went wrong. Please try again.');
+        if (!r.ok || !r.data) {
+          return fail((r.data && r.data.error)
+            || 'Sorry — the entry service is not responding (error ' + r.status
+             + '). Please tell someone at our booth, or email support@thekiln.org.');
+        }
         form.style.display = 'none';
         done.style.display = 'block';
         done.scrollIntoView({ behavior: 'smooth', block: 'center' });
