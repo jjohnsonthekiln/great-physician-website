@@ -15,9 +15,9 @@
 # Serve the Great Physician Pro page (counsel.html) at /pricing too.
 /pricing                      /counsel.html                                   200
 
-# Sing! 2026 booth giveaway. The printed QR code points at the bare /sing,
-# so pin the rewrite rather than relying on Pages' clean-URL inference.
-/sing                         /sing.html                                      200
+# NB: do NOT add a `/sing -> /sing.html 200` rewrite here. Workers Static
+# Assets already serves sing.html at /sing, and it 307s /sing.html back to
+# /sing — so the rewrite makes /sing redirect to itself forever.
 
 # Inductive Group Study invitations — rewrite (200) keeps the URL bar
 # showing /join/<token>, page reads the token from JS. Tapping the link on a
