@@ -67,7 +67,8 @@
     .creator-note p + p { margin-top: 18px; }
     .creator-lede { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--gold-dark); line-height: 1.7; }
     .creator-sig { margin-top: 34px; display: flex; align-items: center; gap: 18px; }
-    .creator-portrait { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; flex: 0 0 auto; border: 1px solid var(--border); box-shadow: 0 0 0 3px var(--cream), 0 0 0 4px var(--gold); }
+    .creator-portrait { width: 120px; height: 120px; flex: 0 0 auto; border-radius: 50%; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 0 0 3px var(--cream), 0 0 0 4px var(--gold); }
+    .creator-portrait img { display: block; width: 123%; height: 123%; margin: -11.5%; object-fit: cover; object-position: 52% 0%; }
     .creator-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text-dark); }
     .creator-role { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
     .pro-panel { max-width: 880px; margin: 44px auto 0; padding: 40px 40px 34px; background: rgba(201,168,76,0.055); border: 1px solid var(--gold); border-radius: 6px; }
@@ -161,13 +162,6 @@
   </div>
 </div>
 
-<section id="honest-ai">
-  <h2 class="section-title">What Great Physician is.</h2>
-  <div class="divider"></div>
-  <p class="section-body" style="margin-bottom:18px;">Great Physician is an interactive AI search app. You bring a real question &mdash; a marriage coming apart, depression, anxiety, addiction, anger, grief &mdash; and it searches Scripture alongside an extensive library of reliable Christian writings from across church history, then answers from what it finds there.</p>
-  <p class="section-body">That is the whole of it. It is a search tool, not a person and not a pastor or replacement for the local church. What keeps it from inventing answers is a method called <strong>Retrieval-Augmented Generation</strong>: every response is retrieved from a curated library &mdash; Scripture first, then trusted voices from Augustine to Jay Adams &mdash; and stays tethered to those sources. You get the historic voice of the church on your situation, not whatever a chatbot happens to generate.</p>
-</section>
-
 <div class="scripture-block">
   <p class="scripture-text">"Come to me, all who labor and are heavy laden, and I will give you rest."</p>
   <p class="scripture-ref">Matthew 11:28</p>
@@ -184,6 +178,13 @@
   <p class="scripture-text scripture-verse2">"Your word is a lamp to my feet and a light to my path."</p>
   <p class="scripture-ref">Psalm 119:105</p>
 </div>
+
+<section id="honest-ai">
+  <h2 class="section-title">About Great Physician</h2>
+  <div class="divider"></div>
+  <p class="section-body" style="margin-bottom:18px;">Great Physician is an interactive AI search app. The hurting brings a real question &mdash; a marriage coming apart, depression, anxiety, addiction, anger, grief &mdash; and it searches Scripture alongside an extensive library of reliable Christian writings from across church history, then answers from what it finds there.</p>
+  <p class="section-body">That is the whole of it. It is a search tool, not a person and not a pastor or replacement for the local church. What keeps it from inventing answers is a method called <strong>Retrieval-Augmented Generation</strong>: every response is retrieved from a curated library &mdash; Scripture first, then trusted voices from Augustine to Jay Adams &mdash; and stays tethered to those sources. You get the historic voice of the church on your situation, not whatever a chatbot happens to generate.</p>
+</section>
 
 <section id="about">
   <p class="section-label">Tools &amp; Features</p>
@@ -203,13 +204,13 @@
   <div class="creator-note">
     <p class="section-label">A Note from the Creator</p>
     <p class="creator-lede">The idea for Great Physician came through local and global evangelism efforts.</p>
-    <p>It began in conversations with hurting people, inside and outside the church. After the conversation, how could we follow up with people we may never see again? We handed out cards with QR codes, a link to a website that gave them the opportunity to interact with the good news of the gospel, God's Word, and faithful pastors from throughout church history. The conversations that came back were extraordinary.</p>
+    <p>The idea for Great Physician began in conversations with hurting people, inside and outside the church. After the conversation, how could we follow up with people we may never see again? We handed out cards with QR codes, a link to a website that gave them the opportunity to interact with the good news of the gospel, God's Word, and faithful pastors from throughout church history. The conversations that came back were extraordinary.</p>
     <p>During my time as a church-planting pastor, I became connected with Biblical Counseling. The principles of Biblical Counseling, particularly the sufficiency of Christ and of Scripture, transformed my life and the lives of the people the Lord has given me to counsel. I am currently a PhD student at Midwestern Baptist Theological Seminary, with an emphasis on Biblical Counseling.</p>
     <p>People often ask their hardest questions at hours when no counselor is awake. They open a search engine at two in the morning and take whatever the internet hands back. I wanted them to find Scripture there instead, along with the counsel of faithful men and women who walked through the same darkness long before us and wrote down what God taught them in it.</p>
     <p>This was never meant to stand in for your pastor. It is a way to put God's Word into the hands of anyone with a phone, at the moment they are actually asking. If it sends you back to your Bible and into a local church that knows your name, it has done what I hoped it would do.</p>
     <p>That is also why everything here is free. The ministry runs on the gifts of people who want the same thing.</p>
     <div class="creator-sig">
-      <img class="creator-portrait" src="jeff-headshot.jpg" alt="Jeff Johnson" width="96" height="96" loading="lazy">
+      <span class="creator-portrait"><img src="jeff-headshot.jpg" alt="Jeff Johnson" loading="lazy"></span>
       <div>
         <div class="creator-name">Jeff Johnson</div>
         <div class="creator-role">Founder &middot; The Kiln Ministries</div>
