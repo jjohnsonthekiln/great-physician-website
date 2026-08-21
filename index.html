@@ -61,6 +61,15 @@
     .feature-icon svg { width: 34px; height: 34px; }
     .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--text-dark); margin-bottom: 12px; }
     .feature-body { font-size: 0.85rem; line-height: 1.8; color: var(--text-mid); font-weight: 300; }
+    .creator-note { margin-top: 60px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 4px; padding: 48px; }
+    .creator-note .section-label { margin-bottom: 20px; }
+    .creator-note p { font-size: 0.9rem; line-height: 1.9; color: var(--text-mid); font-weight: 300; max-width: 720px; }
+    .creator-note p + p { margin-top: 18px; }
+    .creator-lede { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--gold-dark); line-height: 1.7; }
+    .creator-sig { margin-top: 34px; display: flex; align-items: center; gap: 18px; }
+    .creator-portrait { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; flex: 0 0 auto; border: 1px solid var(--border); box-shadow: 0 0 0 3px var(--cream), 0 0 0 4px var(--gold); }
+    .creator-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text-dark); }
+    .creator-role { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
     .pro-panel { max-width: 880px; margin: 44px auto 0; padding: 40px 40px 34px; background: rgba(201,168,76,0.055); border: 1px solid var(--gold); border-radius: 6px; }
     .pro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 26px 34px; text-align: left; }
     .pro-tool-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 5px; }
@@ -97,6 +106,7 @@
       .hero .hero-title { margin-bottom: 18px; }
       .hero .hero-body { margin-bottom: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .creator-note { padding: 32px 24px; }
       nav { padding: 16px 20px; }
       .nav-toggle { display: flex; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 8px 0; background: rgba(250,248,244,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); box-shadow: 0 8px 24px rgba(44,26,14,0.06); }
@@ -143,13 +153,21 @@
     <img src="gp-logo-hero.svg" class="hero-logo" alt="Great Physician" />
     <p class="hero-eyebrow">The Kiln Ministries Presents</p>
     <h1 class="hero-title">Timeless counsel, rooted in Scripture and 2,000 years of church wisdom.</h1>
-    <p class="hero-body">Biblical guidance for life's struggles &mdash; accessible anytime.</p>
+    <p class="hero-body">An interactive AI search app for Scripture-based answers to life's hardest struggles &mdash; anxiety, depression, addiction, broken relationships.</p>
     <div class="hero-cta">
       <a href="#download" class="btn-primary">Download</a>
       <a href="#about" class="btn-secondary">Learn More</a>
     </div>
   </div>
 </div>
+
+<section id="honest-ai">
+  <p class="section-label">Honest About the Technology</p>
+  <h2 class="section-title">What Great Physician<br>actually is.</h2>
+  <div class="divider"></div>
+  <p class="section-body" style="margin-bottom:18px;">Great Physician is an interactive AI search app. You bring a real question &mdash; a marriage coming apart, depression, anxiety, addiction, anger, grief &mdash; and it searches Scripture alongside an extensive library of reliable Christian writings from across church history, then answers from what it finds there.</p>
+  <p class="section-body">That is the whole of it. It is a search tool, not a person and not a pastor. What keeps it from inventing answers is a method called <strong>Retrieval-Augmented Generation</strong>: every response is retrieved from a curated library &mdash; Scripture first, then trusted voices from Augustine to Jay Adams &mdash; and stays tethered to those sources. You get the historic voice of the church on your situation, not whatever a chatbot happens to generate.</p>
+</section>
 
 <div class="scripture-block">
   <p class="scripture-text">"Come to me, all who labor and are heavy laden, and I will give you rest."</p>
@@ -182,13 +200,23 @@
     <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.2-4.6-9.2-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.2 11c-2 4.4-9.2 9-9.2 9Z"/></svg></div><div class="feature-title">Bible Memory</div><div class="feature-body">A Scripture memorization game, free for everyone. Work through themed verse packs step by step until each verse is truly yours, with spaced review to keep it hidden in your heart.<span style="display:block; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.02rem; color:var(--gold-dark); line-height:1.5; margin-top:14px;">&ldquo;I have stored up your word in my heart, that I might not sin against you.&rdquo;</span><span style="display:block; font-size:0.66rem; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase; margin-top:8px;">Psalm 119:11</span></div></div>
     <div class="feature"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v17"/><path d="M12 5.5h6.5l2 2-2 2H12"/><path d="M12 12.5H5.5l-2 2 2 2H12"/></svg></div><div class="feature-title">Discipleship Lessons</div><div class="feature-body">Sixteen foundational lessons &mdash; from &ldquo;Who Is Jesus?&rdquo; to Heaven &mdash; with fill-in-the-blank and reflection questions answered right in the app, free for everyone. Work through them on your own or with a counselor, and share any lesson &mdash; answers included &mdash; by text or email.</div></div>
   </div>
-</section>
 
-<section id="honest-ai">
-  <p class="section-label">Honest About the Technology</p>
-  <h2 class="section-title">Not AI the way<br>you're picturing it.</h2>
-  <div class="divider"></div>
-  <p class="section-body">The counsel is built on a special kind of AI &mdash; one that searches and synthesizes sound biblical truths from across two thousand years of church history, from Augustine to Jay Adams. It doesn't speak from nowhere or make things up. Using a method called <strong>Retrieval-Augmented Generation</strong>, your guide draws on a curated library of Scripture and trusted Christian writings, then answers from those sources. When you ask about anxiety, marriage, depression, or addiction, you receive guidance that is consistent, grounded, and faithful &mdash; the historic voice of the church, speaking to your situation.</p>
+  <div class="creator-note">
+    <p class="section-label">A Note from the Creator</p>
+    <p class="creator-lede">The idea for Great Physician came through local and global evangelism efforts.</p>
+    <p>It began in conversations with hurting people, inside and outside the church. After the conversation, how could we follow up with people we may never see again? We handed out cards with QR codes, a link to a website that gave them the opportunity to interact with the good news of the gospel, God's Word, and faithful pastors from throughout church history. The conversations that came back were extraordinary.</p>
+    <p>During my time as a church-planting pastor, I became connected with Biblical Counseling. The principles of Biblical Counseling, particularly the sufficiency of Christ and of Scripture, transformed my life and the lives of the people the Lord has given me to counsel. I am currently a PhD student at Midwestern Baptist Theological Seminary, with an emphasis on Biblical Counseling.</p>
+    <p>People often ask their hardest questions at hours when no counselor is awake. They open a search engine at two in the morning and take whatever the internet hands back. I wanted them to find Scripture there instead, along with the counsel of faithful men and women who walked through the same darkness long before us and wrote down what God taught them in it.</p>
+    <p>This was never meant to stand in for your pastor. It is a way to put God's Word into the hands of anyone with a phone, at the moment they are actually asking. If it sends you back to your Bible and into a local church that knows your name, it has done what I hoped it would do.</p>
+    <p>That is also why everything here is free. The ministry runs on the gifts of people who want the same thing.</p>
+    <div class="creator-sig">
+      <img class="creator-portrait" src="jeff-headshot.jpg" alt="Jeff Johnson" width="96" height="96" loading="lazy">
+      <div>
+        <div class="creator-name">Jeff Johnson</div>
+        <div class="creator-role">Founder &middot; The Kiln Ministries</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="sources">
