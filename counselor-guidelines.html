@@ -17,8 +17,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #faf8f4; --surface: #f0ebe0; --border: #e0d8cc;
-      --text-dark: #2c1a0e; --text-mid: #7a6a58; --text-light: #b0a090;
+      --bg: #ffffff; --surface: #f0ebe0; --border: #e0d8cc;
+      --text-dark: #1c1c1c; --text-mid: #4a4038; --text-light: #b0a090;
       --gold: #c9a84c; --gold-dark: #8b5e1a;
     }
     body { background: var(--bg); color: var(--text-dark); font-family: 'Montserrat', sans-serif; min-height: 100vh; }
@@ -45,26 +45,26 @@
     .section-number { font-size: 9px; font-weight: 600; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--gold-dark); margin-bottom: 20px; line-height: 1.2; }
     .section-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 24px; }
-    .section-body { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.9; }
+    .section-body { font-size: 14px; font-weight: 400; color: var(--text-mid); line-height: 1.9; }
     .section-body p { margin-bottom: 16px; }
     .section-body p:last-child { margin-bottom: 0; }
     .pull-quote { background: var(--surface); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; padding: 24px 28px; margin: 32px 0; }
     .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--gold-dark); line-height: 1.6; margin-bottom: 10px !important; }
     .pull-quote cite { font-size: 10px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; font-style: normal; }
     .guideline-list { list-style: none; counter-reset: gl; margin-top: 16px; }
-    .guideline-list li { counter-increment: gl; display: flex; gap: 16px; margin-bottom: 18px; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .guideline-list li { counter-increment: gl; display: flex; gap: 16px; margin-bottom: 18px; font-size: 14px; font-weight: 400; color: var(--text-mid); line-height: 1.8; }
     .guideline-list li::before { content: counter(gl); min-width: 24px; height: 24px; background: var(--gold); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
     .plain-list { list-style: none; margin-top: 16px; }
-    .plain-list li { padding-left: 20px; position: relative; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 10px; }
+    .plain-list li { padding-left: 20px; position: relative; font-size: 14px; font-weight: 400; color: var(--text-mid); line-height: 1.8; margin-bottom: 10px; }
     .plain-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
-    .note-box { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .note-box { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 400; color: var(--text-mid); line-height: 1.8; }
     .note-box strong { color: var(--gold-dark); font-weight: 600; display: block; margin-bottom: 6px; }
-    .warning-box { background: rgba(139,94,26,0.05); border: 1px solid rgba(139,94,26,0.2); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .warning-box { background: rgba(139,94,26,0.05); border: 1px solid rgba(139,94,26,0.2); border-radius: 6px; padding: 24px 28px; margin: 28px 0; font-size: 13px; font-weight: 400; color: var(--text-mid); line-height: 1.8; }
     .warning-box strong { color: var(--gold-dark); font-weight: 600; display: block; margin-bottom: 6px; }
     .full-divider { border: none; border-top: 1px solid var(--border); margin: 64px 0; }
     .cta-block { text-align: center; padding: 48px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
     .cta-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--gold-dark); margin-bottom: 12px; }
-    .cta-block p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.8; max-width: 440px; margin: 0 auto 28px; }
+    .cta-block p { font-size: 13px; font-weight: 400; color: var(--text-mid); line-height: 1.8; max-width: 440px; margin: 0 auto 28px; }
     .btn-primary { background: var(--gold-dark); color: #fff; padding: 14px 32px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
     .btn-primary:hover { background: #7a5216; }
     footer { background: var(--surface); border-top: 1px solid var(--border); padding: 24px 32px; text-align: center; font-size: 11px; font-weight: 300; color: var(--text-light); }
