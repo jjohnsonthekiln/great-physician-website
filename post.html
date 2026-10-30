@@ -52,6 +52,11 @@
     .scripture-block p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--text-dark); margin-bottom: 8px !important; line-height: 1.6; }
     .scripture-block .ref { font-family: 'Montserrat', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold-dark); font-style: normal; margin-bottom: 0 !important; text-transform: uppercase; }
 
+    .post-listen { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; margin-bottom: 40px; }
+    .post-listen-label { font-size: 0.68rem; letter-spacing: 0.3em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 12px !important; line-height: 1.4 !important; }
+    .post-body .post-listen-label a { color: var(--gold-dark); text-decoration: none; }
+    .post-listen iframe { width: 100%; height: 180px; border: 0; display: block; }
+
     .post-scripture-tag { text-align: center; margin-top: 40px; padding: 24px; border-top: 1px solid var(--border); }
     .post-scripture-tag span { font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold-dark); text-transform: uppercase; }
 
@@ -93,6 +98,7 @@
   <ul class="nav-links">
     <li><a href="/#about">About</a></li>
     <li><a href="/blog">Blog</a></li>
+    <li><a href="/podcast">Podcast</a></li>
     <li><a href="/#download">Download</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/#donate">Give</a></li>
@@ -179,6 +185,25 @@
     return bodyArray.map(renderBodyElement).filter(Boolean).join('\n');
   }
 
+  // Transistor share links come as /s/<id> (share page) or /e/<id> (embed);
+  // only Transistor's own player is ever framed, always as /e/<id>.
+  function transistorEmbed(url) {
+    const m = /^https:\/\/share\.transistor\.fm\/[es]\/([A-Za-z0-9]+)\/?$/.exec(url || '');
+    return m ? `https://share.transistor.fm/e/${m[1]}` : null;
+  }
+
+  function renderListen(post) {
+    const src = post.episode && transistorEmbed(post.episode.embed);
+    if (!src) return '';
+    const label = post.episode.number ? `Listen · Episode ${post.episode.number}` : 'Listen to this article';
+    return `
+      <div class="post-listen">
+        <p class="post-listen-label"><a href="/podcast">${escapeHtml(label)}</a></p>
+        <iframe src="${escapeHtml(src)}" title="${escapeHtml(post.title)} — audio player" loading="lazy" scrolling="no" seamless></iframe>
+      </div>
+    `;
+  }
+
   function pickRelated(posts, currentSlug, currentCategory, max = 3) {
     const others = posts.filter(p => p.slug !== currentSlug);
     const sameCategory = others.filter(p => p.category === currentCategory);
@@ -225,6 +250,7 @@
         <p class="post-meta">${escapeHtml(meta)}</p>
       </div>
       <article class="post-body">
+        ${renderListen(post)}
         ${renderBody(post.body)}
         ${scriptureTag}
         <div class="post-nav">

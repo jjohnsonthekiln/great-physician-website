@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast — Great Physician</title>
+  <meta name="description" content="Weekly episodes from The Kiln: every article from the Great Physician Writings, read and taught aloud.">
+  <link rel="icon" type="image/png" href="/favicon.png?v=3">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+  <meta property="og:image" content="https://thegreatphysician.ai/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://thegreatphysician.ai/og-image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #ffffff; --surface: #f0ebe0; --border: #e0d8cc; --gold: #c9a84c; --gold-dark: #8b5e1a; --text-dark: #1c1c1c; --text-mid: #4a4038; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 48px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--text-dark); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .nav-links a.active { color: var(--gold-dark); }
+
+    .page-hero {
+      padding: 140px 24px 60px; text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, #f0ebe0 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.45em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 16px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--text-dark); margin-bottom: 16px; }
+    .page-body { font-size: 0.95rem; color: var(--text-mid); max-width: 560px; margin: 0 auto; line-height: 1.8; font-weight: 400; }
+
+    .subscribe { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px; }
+    .subscribe a {
+      border: 1px solid var(--gold); border-radius: 999px; padding: 9px 20px;
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-dark); text-decoration: none; transition: all 0.2s; background: var(--cream);
+    }
+    .subscribe a:hover { background: var(--gold); color: white; }
+
+    .episodes { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; display: grid; gap: 24px; }
+    .episode { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 32px; }
+    .episode-meta { font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 12px; }
+    .episode-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--text-dark); line-height: 1.3; margin-bottom: 12px; }
+    .episode-title a { color: inherit; text-decoration: none; }
+    .episode-title a:hover { color: var(--gold-dark); }
+    .episode-excerpt { font-size: 0.85rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 20px; }
+    .episode iframe { width: 100%; height: 180px; border: 0; display: block; }
+    .episode-read { font-size: 0.72rem; letter-spacing: 0.2em; color: var(--gold-dark); text-transform: uppercase; margin-top: 16px; display: inline-block; text-decoration: none; }
+
+    .empty-state, .error-state { text-align: center; padding: 40px 24px; color: var(--text-mid); line-height: 1.8; }
+    .empty-state a, .error-state a { color: var(--gold-dark); }
+
+    footer { padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); background: var(--surface); }
+    footer p { font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.1em; line-height: 2; }
+    footer a { color: var(--gold-dark); text-decoration: none; }
+
+    @media (max-width: 768px) { nav { padding: 16px 20px; } .nav-links { display: none; } .episode { padding: 24px 20px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Great Physician</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/blog">Writings</a></li>
+    <li><a href="/podcast" class="active">Podcast</a></li>
+    <li><a href="/#download">Download</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#donate">Give</a></li>
+    <li><a href="https://app.thegreatphysician.ai" style="color: var(--gold-dark); font-weight: 600;">Counselor Sign In</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <p class="page-eyebrow">From the Ministry</p>
+  <h1 class="page-title" id="show-title">The Podcast.</h1>
+  <p class="page-body" id="show-description">A new episode every week. Each one takes an article from the Writings and works through it aloud &mdash; biblical counsel and pastoral reflection from The Kiln, for the car, the walk, and the long night.</p>
+  <div class="subscribe" id="subscribe"></div>
+</div>
+
+<div class="episodes" id="episodes">
+  <div class="empty-state"><p>Loading episodes…</p></div>
+</div>
+
+<footer>
+  <p>© 2026 The Kiln · Jackson, Tennessee</p>
+  <p style="margin-top: 8px;"><a href="/privacy">Privacy Policy</a> · <a href="mailto:support@thekiln.org">support@thekiln.org</a></p>
+</footer>
+
+<script>
+(function() {
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    const parts = iso.split('-');
+    if (parts.length !== 3) return iso;
+    const [y, m, d] = parts.map(Number);
+    if (!y || !m || !d) return iso;
+    return `${months[m-1]} ${d}, ${y}`;
+  }
+
+  // Transistor share links come as /s/<id> (share page) or /e/<id> (embed);
+  // only Transistor's own player is ever framed, always as /e/<id>.
+  function transistorEmbed(url) {
+    const m = /^https:\/\/share\.transistor\.fm\/[es]\/([A-Za-z0-9]+)\/?$/.exec(url || '');
+    return m ? `https://share.transistor.fm/e/${m[1]}` : null;
+  }
+
+  // Only plain https links become subscribe buttons.
+  function safeLink(url) {
+    return /^https:\/\/[^\s"'<>]+$/.test(url || '') ? url : null;
+  }
+
+  function renderShow(show) {
+    if (show.title) {
+      document.getElementById('show-title').textContent = show.title;
+      document.title = `${show.title} — Great Physician`;
+    }
+    if (show.description) document.getElementById('show-description').textContent = show.description;
+    const links = [
+      ['Apple Podcasts', show.subscribe && show.subscribe.apple],
+      ['Spotify', show.subscribe && show.subscribe.spotify],
+      ['YouTube', show.subscribe && show.subscribe.youtube],
+      ['RSS Feed', show.subscribe && show.subscribe.rss],
+    ].filter(([, url]) => safeLink(url));
+    document.getElementById('subscribe').innerHTML = links
+      .map(([label, url]) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>`)
+      .join('');
+  }
+
+  function renderEpisodes(posts) {
+    const root = document.getElementById('episodes');
+    const episodes = posts
+      .filter(p => p.episode && transistorEmbed(p.episode.embed))
+      .sort((a, b) => (b.episode.date || b.date || '').localeCompare(a.episode.date || a.date || ''));
+    if (!episodes.length) {
+      root.innerHTML = '<div class="empty-state"><p>The first episode is on its way.</p><p>In the meantime, the articles are all in the <a href="/blog">Writings</a>.</p></div>';
+      return;
+    }
+    root.innerHTML = episodes.map(p => {
+      const ep = p.episode;
+      const meta = [
+        ep.number ? `Episode ${ep.number}` : '',
+        formatDate(ep.date || p.date),
+        ep.duration || '',
+      ].filter(Boolean).join(' · ');
+      const postUrl = `post.html?slug=${encodeURIComponent(p.slug)}`;
+      return `
+        <article class="episode">
+          <p class="episode-meta">${escapeHtml(meta)}</p>
+          <h2 class="episode-title"><a href="${postUrl}">${escapeHtml(p.title)}</a></h2>
+          <p class="episode-excerpt">${escapeHtml(p.excerpt || '')}</p>
+          <iframe src="${escapeHtml(transistorEmbed(ep.embed))}" title="${escapeHtml(p.title)} — audio player" loading="lazy" scrolling="no" seamless></iframe>
+          <a class="episode-read" href="${postUrl}">Read the article →</a>
+        </article>
+      `;
+    }).join('');
+  }
+
+  fetch('podcast/podcast.json', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : {})
+    .then(renderShow)
+    .catch(err => console.error(err));
+
+  fetch('posts/posts.json', { cache: 'no-cache' })
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => renderEpisodes(Array.isArray(data) ? data : []))
+    .catch(err => {
+      document.getElementById('episodes').innerHTML = `<div class="error-state"><p>Could not load episodes.</p><p style="font-size:0.75rem;">${escapeHtml(err.message)}</p></div>`;
+      console.error(err);
+    });
+})();
+</script>
+
+</body>
+</html>
