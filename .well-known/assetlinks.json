@@ -5,9 +5,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.jeffthekiln.GreatPhysician",
+      "package_name": "com.jeffthekiln.greatphysician",
       "sha256_cert_fingerprints": [
-        "REPLACE_ANDROID_RELEASE_SHA256_FINGERPRINT"
+        "62:CA:0B:10:C6:B8:92:AD:7D:73:4A:F8:88:2A:3D:9E:9F:75:DF:3B:18:60:3C:A7:67:8D:8E:71:3E:C7:FD:1B"
       ]
     }
   }
