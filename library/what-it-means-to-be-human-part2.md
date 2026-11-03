@@ -1,12 +1,12 @@
 # What It Means to Be Human
 ## Part Two: The Wound at the Root — Sin and the Fractured Self
 
-*A Biblical and Reformed Account of the Fall, Original Sin, and the Depth of Human Corruption*
+*A Biblical Account of the Fall, Original Sin, and the Depth of Human Corruption*
 
 *Sources: Holy Scripture; John Calvin, Institutes of the Christian Religion; Herman Bavinck, Reformed Dogmatics (Vol. 3), Christian Worldview, Philosophy of Revelation; Thomas Watson, A Body of Divinity; Thomas Boston, Human Nature in Its Fourfold State; John Owen, Of Indwelling Sin in Believers, Mortification of Sin; Richard Sibbes, The Bruised Reed*
 
 *Published by The Kiln Ministries / Great Physician Application*
-*Series: What It Means to Be Human — Part Two of Three*
+*Series: What It Means to Be Human — Part Two of Four*
 
 ---
 
@@ -24,7 +24,7 @@ The biblical account of sin is not pessimism about human nature. It is realism a
 
 ## I. The Fall: A Historical Event with Cosmic Consequences
 
-The Reformed tradition has always insisted, against every form of mythological or allegorical interpretation, that Genesis 3 records a real event in the history of a real man and a real woman — an act of genuine rebellion that had consequences not merely for Adam and Eve but for the entire human race and for the created order itself.
+The church has always insisted, on the authority of Scripture and against every form of mythological or allegorical interpretation, that Genesis 3 records a real event in the history of a real man and a real woman — an act of genuine rebellion that had consequences not merely for Adam and Eve but for the entire human race and for the created order itself.
 
 Calvin, throughout *Institutes* Book II, is emphatic on this point. The fall is not an illustration of a universal human tendency toward self-assertion; it is the originating act from which that tendency flows. It happened; it was inexcusable; and its consequences were total. Everything that followed — every sin in every human heart across every subsequent generation — traces its origin to this event and to the solidarity of the human race in the one who committed it.
 
@@ -36,7 +36,7 @@ This historical insistence is not a piece of obscurantist biblicism; it is the t
 
 ## II. The Nature of the First Sin: Pride, Unbelief, and the Rejection of the Creator
 
-What was the nature of Adam's sin? The Reformed tradition, following Augustine, has consistently identified its deepest root as *pride* — but a pride that takes a specific form: the refusal to receive the self as a gift from God, the desire to be autonomous, self-defining, self-sufficient.
+What was the nature of Adam's sin? Faithful teachers of the church since Augustine have consistently identified its deepest root as *pride* — but a pride that takes a specific form: the refusal to receive the self as a gift from God, the desire to be autonomous, self-defining, self-sufficient.
 
 Calvin's analysis in *Institutes* II.1 is precise. The immediate occasion of the fall was the serpent's lie — the suggestion that God's prohibition was not an expression of love but a stratagem to deprive humanity of what rightly belonged to it. The first sin was therefore not merely an act of disobedience but an act of *unbelief*: a refusal to trust God's word, a preferring of the creature's own judgment over the Creator's revealed will. Behind the act of eating the forbidden fruit lay a prior act of the will — the choice to treat God as a rival rather than a Father, as a restricting power rather than the source of all good.
 
@@ -62,7 +62,7 @@ For the biblical counselor, these three immediate consequences of the fall are a
 
 ## IV. Original Sin: Guilt and Pollution in All of Adam's Posterity
 
-The Reformed tradition teaches that the consequences of Adam's sin did not remain with Adam alone. By virtue of the solidarity of the human race in its covenant head, Adam's sin is imputed to all his posterity — and with it, the corruption of nature that sin produced in him is transmitted to every human being born of natural generation.
+Scripture teaches that the consequences of Adam's sin did not remain with Adam alone. By virtue of the solidarity of the human race in its covenant head, Adam's sin is imputed to all his posterity — and with it, the corruption of nature that sin produced in him is transmitted to every human being born of natural generation.
 
 This doctrine — *original sin* — has two distinct components that must be clearly distinguished.
 
@@ -76,7 +76,7 @@ Watson's treatment of original sin is pastorally astute: he notes that this inhe
 
 ## V. Total Depravity: The Extent of Sin's Reach
 
-The Reformed tradition's doctrine of *total depravity* is among its most misunderstood contributions. It does not mean that every human being is as sinful as he could possibly be, or that there is no genuine goodness anywhere in fallen humanity. What it means is that no dimension of the human person has escaped the corrupting influence of sin — the fall was not a partial event that damaged some faculties while leaving others intact. It reached the whole person: mind, will, affections, conscience, and body.
+The biblical doctrine of *total depravity* is among the most misunderstood teachings of Scripture. It does not mean that every human being is as sinful as he could possibly be, or that there is no genuine goodness anywhere in fallen humanity. What it means is that no dimension of the human person has escaped the corrupting influence of sin — the fall was not a partial event that damaged some faculties while leaving others intact. It reached the whole person: mind, will, affections, conscience, and body.
 
 **The mind** has been darkened. Paul describes the Gentile world in Romans 1:21 as having become *"futile in their thinking"* and *"darkened in their foolish hearts."* In 1 Corinthians 2:14, he writes that *"the natural person does not accept the things of the Spirit of God, for they are folly to him, and he is not able to understand them because they are spiritually discerned."* The noetic effects of sin are not peripheral; they reach the understanding itself, so that the fallen person cannot reliably evaluate his own spiritual condition, rightly interpret his own experience, or perceive the things of God without the illumining work of the Holy Spirit.
 
@@ -148,7 +148,7 @@ For the biblical counselor, this means that presenting problems are rarely merel
 
 ## X. What Remains: Common Grace and the Lingering Image
 
-The doctrine of total depravity, properly understood, does not require the conclusion that nothing good remains in fallen humanity. The Reformed tradition has consistently maintained the doctrine of *common grace* — the restraining, preserving, and gift-giving work of God by which he prevents sin from running its full course in fallen humanity and preserves the capacities of the image even in its corrupted state.
+The doctrine of total depravity, properly understood, does not require the conclusion that nothing good remains in fallen humanity. Scripture also teaches the doctrine of *common grace* — the restraining, preserving, and gift-giving work of God by which he prevents sin from running its full course in fallen humanity and preserves the capacities of the image even in its corrupted state.
 
 Calvin's treatment of common grace in *Institutes* II.2–3 is among the most generous and careful accounts in the tradition. He insists that the remarkable intellectual, artistic, and civic achievements of fallen humanity — the philosophical wisdom of the Greeks, the political genius of the Romans, the discoveries of the sciences — are genuine goods that should be received with gratitude as gifts of the Spirit. To despise them as worthless because they come from unregenerate persons would be to insult the Spirit of God who gave them.
 
@@ -182,13 +182,13 @@ The magnitude of the fall is measured by the magnitude of what was lost. Part On
 
 This is not a small problem. It is not a problem that education can solve, or therapy can solve, or self-improvement can solve, or any merely human resource can solve. It is a problem that requires an intervention from outside — from beyond the fallen order, from beyond the creature's own resources, from the One who made the creature in the first place and who alone has the power and the love to restore what sin has destroyed.
 
-That is the subject of Part Three: *Renewed After the Image — Redemption, Sanctification, and the Restored Person*. There we will see that the God who made man in his image has not abandoned the project. In Christ — the perfect image of the invisible God — he has begun a work of image-restoration that will not be completed until the final resurrection, when the children of God are fully conformed to the image of the Son.
+Part Three, *God Is Man's World*, first goes back to the garden to hear the word Adam and Eve refused. Then Part Four takes up the restoration itself: *Renewed After the Image — Redemption, Sanctification, and the Restored Person*. There we will see that the God who made man in his image has not abandoned the project. In Christ — the perfect image of the invisible God — he has begun a work of image-restoration that will not be completed until the final resurrection, when the children of God are fully conformed to the image of the Son.
 
 The wound at the root is real and deep. But the Physician who comes to heal it is greater than the wound — and he leaves no case unfinished.
 
 ---
 
-*Version 1.0 — Part Two of Three*
+*Version 1.0 — Part Two of Four*
 *Series: What It Means to Be Human*
 *The Kiln Ministries / Great Physician Application*
 *For questions: jeff@thekiln.org | thekiln.org*
