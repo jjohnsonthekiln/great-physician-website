@@ -16,15 +16,15 @@ Part One of this series described what the human being was made to be: an image-
 
 Part Two also made a claim that deserves more attention than it could receive there. Following Calvin and Watson, it identified the root of the first sin as *unbelief* — the crediting of the serpent's word over God's word, the inversion of the order on which all genuine human knowledge depended. That claim raises a question we have not yet answered. What was that order? What did it mean for Adam, before he sinned, to know anything at all? And what exactly was the word that he and Eve refused to believe?
 
-This article goes back to the garden to answer those questions. It does so under the guidance of a striking phrase from Cornelius Van Til: *God is man's world.* And it takes up a subject that Geerhardus Vos called *pre-redemptive special revelation* — the fact that God spoke to man, in words, before there was any sin to redeem.
+This article goes back to the garden to answer those questions. It does so under the guidance of Cornelius Van Til, whose teaching on this point can be summed up in a phrase: *God is man's world.* And it takes up a subject that Geerhardus Vos called *pre-redemptive special revelation* — the fact that God spoke to man, in words, before there was any sin to redeem.
 
 That may seem like a detour from the practical work of caring for souls. It is not. Every person who comes for help is an interpreter of his own life. He has already decided what his suffering means, what his relationships mean, what his past means, and what his future holds. The question this article asks — *by whose word are the facts of a human life to be understood?* — is the question underneath every counseling conversation. And the garden is where that question was first asked and first answered.
 
 ---
 
-## I. "God Is Man's World"
+## I. God Is Man's World
 
-Van Til's phrase is short, and it is easy to misread. It does not mean that God and the world are the same thing. Van Til was the most insistent of theologians on what he called the Creator–creature distinction: God is self-existent, self-sufficient, and self-interpreting; the creature is none of these. Nothing in the phrase blurs that line.
+The phrase is short, and it is easy to misread. It does not mean that God and the world are the same thing. Van Til was the most insistent of theologians on what he called the Creator–creature distinction: God is self-existent, self-sufficient, and self-interpreting; the creature is none of these. Nothing in the phrase blurs that line.
 
 What the phrase means is that the true *environment* of the human being is not, in the first place, the physical world. It is God himself. Man does not live in a neutral cosmos that happens to contain, somewhere in it or above it, a God whom he may or may not take into account. He lives, as Paul told the philosophers in Athens, in God: *"In him we live and move and have our being"* (Acts 17:28). Every breath, every thought, every perception, every relationship takes place inside the sphere of God's creating, sustaining, and interpreting presence. *"For from him and through him and to him are all things"* (Romans 11:36). Christ *"upholds the universe by the word of his power"* (Hebrews 1:3), and *"in him all things hold together"* (Colossians 1:17).
 
